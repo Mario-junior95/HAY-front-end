@@ -1,0 +1,13 @@
+.label,
+.pagination > li > a {
+  color: black;
+}
+
+.pagination {
+  background: transparent;
+}
+
+.pagination > .page-item > .page-link {
+  color: white;
+  background: #51b461;
+}

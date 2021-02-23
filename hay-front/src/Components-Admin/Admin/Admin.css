@@ -1,0 +1,44 @@
+.table > thead:first-child > tr:first-child > th {
+  color: black;
+  text-align: center;
+  font-size: 18px;
+}
+
+.admin_table {
+  margin-top: 20px;
+}
+
+.table > tbody > tr > td {
+  padding: 6px 8px;
+}
+
+.Delete-button[type="submit"]:not(:disabled) {
+  padding: 10px;
+  margin: 14px;
+  background-color: red !important;
+}
+
+.Add-button[type="submit"]:not(:disabled) {
+  padding: 10px;
+  margin: 14px;
+  background-color: #51b461;
+}
+
+td > span {
+  position: relative !important;
+  top: 1.7vw !important;
+  z-index: 1 !important;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #51b461 !important;
+}
+
+td > img {
+  max-width: 5vw;
+  height: 5vw;
+}
+
+.visibilty-block {
+  overflow: visible;
+}

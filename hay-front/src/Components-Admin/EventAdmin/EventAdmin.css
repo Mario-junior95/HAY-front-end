@@ -1,0 +1,90 @@
+.table {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.row1 {
+  margin: auto;
+}
+.row0 {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(220, 220, 220);
+  min-height: 60px;
+  align-items: center;
+  margin: 2px;
+  /* padding: 60px; */
+}
+.rowData:hover {
+  background-color: rgb(169, 169, 169);
+}
+.row1 {
+  display: flex;
+  /* justify-content: space-around; */
+  min-height: 60px;
+  align-items: center;
+}
+.hide {
+  visibility: hidden;
+}
+.col0 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 20px;
+}
+.col00 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+.col1 {
+  width: 50%;
+}
+.col2 {
+  width: 33%;
+}
+.col3 {
+  width: 25%;
+}
+.col4 {
+  width: 20%;
+}
+.col5 {
+  width: 16.6%;
+}
+.actionTitle {
+  text-align: right;
+  padding-right: 50px;
+}
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.action div {
+  margin: 0 0 0 20px;
+}
+.register {
+  display: none;
+}
+.grow-1 {
+  flex-grow: 1;
+}
+.grow-2 {
+  flex-grow: 4;
+}
+.event-button {
+  padding: 10px !important;
+  margin: 5px !important;
+  background-color: #51b461;
+}
+.event-modal {
+  text-align: left;
+}
+.event-header {
+  color: black;
+}
+.swal2-popup {
+  width: 40%;
+}

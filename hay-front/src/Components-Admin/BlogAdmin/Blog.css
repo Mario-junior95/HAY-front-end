@@ -1,0 +1,231 @@
+body {
+  overflow-y: scroll;
+}
+
+.subs {
+  position: absolute;
+  top: 410px;
+  left: 78%;
+  height: 120px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background-color: #51b461;
+  border-radius: 1px;
+  width: 240px;
+}
+.subs .p---subs,
+.h2---subs {
+  margin: 5px 0px;
+  color: white;
+  font-weight: bold;
+}
+
+.subs .subs----span {
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: red;
+  cursor: pointer;
+}
+
+.mod {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(12, 12, 12, 0.404);
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding: 50% 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.3s ease;
+}
+
+.status---global {
+  color: red;
+}
+
+.desc-----global {
+  width: 75%;
+  border: none;
+  background-color: #f6f6f6;
+  font-weight: bold;
+}
+
+.add-blog-btn {
+  margin-left: -40px;
+  width: 155px;
+  height: 35px;
+  background-color: #51b461;
+  font-size: 18px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: -4%;
+}
+.add-blog-btn:hover {
+  background-color: #33a145;
+  color: #ffffff;
+}
+.close---blog {
+  position: relative;
+  left: 40px;
+  background-color: red;
+  border: none;
+  width: 90px;
+  height: 35px;
+  color: white;
+  font-weight: bold;
+}
+
+.close---blog:hover {
+  background-color: red;
+  color: black;
+}
+
+.Delete-button---blog {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(12, 12, 12, 0.404);
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 50% 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.3s ease;
+}
+
+.p----delete-blog {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.button___yes {
+  font-size: 18px;
+  color: #ffffff;
+  width: 55px;
+  height: 50px;
+  background-color: #51b461;
+  border: none;
+  font-weight: bold;
+}
+.button___no {
+  font-size: 18px;
+  color: white;
+  width: 55px;
+  height: 50px;
+  background-color: red;
+  border: none;
+  font-weight: bold;
+}
+
+.edit-modal___blog {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(12, 12, 12, 0.404);
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 50% 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.3s ease;
+}
+
+.edit-size___blog {
+  position: relative;
+  margin-top: -18%;
+}
+.sizes--blog {
+  font-weight: bold;
+  border: none;
+  font-size: 18px;
+}
+
+.desc___en___blog_one {
+  width: 85%;
+  border-radius: 8px;
+  background-color: #949594 !important;
+  border: 2px solid #949494 !important;
+  font-size: 20px !important;
+}
+
+.button______edit__blog_one {
+  border: none;
+  font-weight: bold;
+  width: 100px;
+  height: 50px;
+  background-color: #51b461;
+  color: white;
+}
+.button______edit__blog_two {
+  border: none;
+  font-weight: bold;
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  color: white;
+}
+
+.title_______input {
+  background-color: #949594 !important;
+  border: 2px solid #949494 !important;
+  color: white !important;
+  font-size: 18px !important;
+}
+
+.form___blog {
+  margin-top: -23%;
+  background-color: white;
+  height: 100ch;
+  width: 100%;
+}
+
+.input_______blog {
+  width: 55% !important;
+  font-weight: bold;
+}
+
+.file__image {
+  width: 55.3% !important;
+}
+
+.mod____edit {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(12, 12, 12, 0.404);
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding: 50% 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1.3s ease;
+}
+
+.form___blog____edit {
+  margin-top: -20%;
+  background-color: white;
+  height: 93vh;
+  width: 90vh;
+  margin-left: 30%;
+}
+
+.form___blog____edit__one {
+  margin-top: -21.5%;
+  background-color: white;
+  height: 96vh;
+  width: 90vh;
+  margin-left: 30%;
+  font-weight: bold;
+}
+
+.title__________global {
+  color: red;
+}

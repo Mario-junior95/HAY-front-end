@@ -1,0 +1,10 @@
+.change-Password {
+  cursor: pointer;
+  color: black;
+}
+
+.change-Password:hover {
+  color: red;
+}
+
+

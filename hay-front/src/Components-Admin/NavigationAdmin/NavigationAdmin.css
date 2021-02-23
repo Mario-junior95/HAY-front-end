@@ -1,0 +1,139 @@
+.sc-bdfBwQ {
+  width: 20vw;
+}
+
+nav.sc-bdfBwQ {
+  background: #51b461;
+  text-align: center;
+}
+
+/* nav.sc-bdfBwQ {
+  background: #51b461;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+} */
+
+.eAyqVH > a:hover {
+  color: white !important;
+}
+
+.image_nav {
+  height: 10vw;
+  width: 10vw;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+div {
+  text-align: center;
+}
+
+small {
+  display: block;
+}
+
+.iGtrlD div:nth-child(1),
+.iGtrlD div:nth-child(2),
+.iGtrlD div:nth-child(3) {
+  background: black;
+  padding: 3px 16px;
+  margin-top: 4px;
+}
+
+.logout {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  letter-spacing: 0.5em;
+  cursor: pointer;
+  padding: 7px 0;
+}
+
+.logout:hover {
+  color: red;
+  font-size: 1.12em;
+}
+
+.react-confirm-alert-body {
+  text-align: center !important;
+}
+
+.react-confirm-alert-body > .react-confirm-alert-button-group {
+  position: relative;
+  left: 28vw;
+}
+
+.react-confirm-alert-button-group button:nth-child(2) {
+  background: #51b461;
+}
+
+.react-confirm-alert-button-group button:nth-child(1) {
+  background: red;
+}
+/* 
+@media only screen and (min-width: 320px) {
+  .image_nav {
+    display: none;
+  }
+  .eAyqVH a {
+    color: black !important;
+  }
+  .eAyqVH a:hover {
+    color: white !important;
+  }
+} */
+
+@media only screen and (min-width: 480px) {
+  .image_nav {
+    display: none;
+  }
+  .eAyqVH a {
+    color: black !important;
+  }
+  .eAyqVH a:hover {
+    color: white !important;
+  }
+  .react-confirm-alert-body > .react-confirm-alert-button-group {
+    position: relative;
+    left: 22vw;
+  }
+}
+
+@media only screen and (min-width: 577px) {
+  nav.sc-bdfBwQ {
+    width: 37vw;
+  }
+  .image_nav {
+    display: block;
+  }
+  .eAyqVH a {
+    color: black !important;
+  }
+  .eAyqVH a:hover {
+    color: white !important;
+  }
+
+  .react-confirm-alert-body > .react-confirm-alert-button-group {
+    position: relative;
+    left: 18vw;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  nav.sc-bdfBwQ {
+    width: 20vw;
+  }
+  .eAyqVH a:hover {
+    color: white !important;
+  }
+  .react-confirm-alert-body > .react-confirm-alert-button-group {
+    position: relative;
+    left: 8vw;
+  }
+}

@@ -1,0 +1,12 @@
+.Add_Admin_btn {
+  position: relative;
+  left: 36vw;
+  padding: 15px !important;
+}
+
+.add-title {
+  color: black !important;
+  font-size: 25px;
+  position: relative;
+  left: 19vw;
+}

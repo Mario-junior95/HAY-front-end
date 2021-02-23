@@ -1,0 +1,41 @@
+.group-therapy{
+    display:flex;
+    flex-direction: column;
+    border:1px transparent solid;
+    width:25%;
+    height: fit-content;
+    margin-left: 15%;
+    margin-top: 5%;
+    padding-bottom:1%;
+    padding-left:2%;
+    padding-right:2%;
+    box-shadow: 5px 10px 15px black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.group-therapy img{
+    width:120%!important;
+    margin-left: -10%;
+    height:40vh;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    position: relative;
+}
+.card-footer{
+    width:120%!important;
+    margin-left: -10%;
+   padding-bottom: 10%;
+   margin-top: 15%!important;
+   color:black;
+   font-size: 18px;
+   padding-top: 15%;
+   border-bottom-left-radius: 25px!important;
+   border-bottom-right-radius: 25px!important;
+}
+.booksession{
+    background: url(../../images/booksession.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+}
