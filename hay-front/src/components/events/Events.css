@@ -15,6 +15,7 @@
   margin-right: auto;
   margin-bottom: 5rem;
 }
+
 .event-type {
   display: flex;
   /* justify-content: space-around; */
@@ -220,5 +221,10 @@
 @media only screen and (max-width: 600px) {
   .event-card {
     width: 100%;
+  }
+  @media only screen and (max-width:480px){
+    .events-banner{
+      margin-top: -32%!important;
+    }
   }
 }
