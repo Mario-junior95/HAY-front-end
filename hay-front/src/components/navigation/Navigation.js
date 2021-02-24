@@ -54,10 +54,10 @@ const Navigation = () => {
           <Sidenav/>
         </div>
         <div id="nav-buttons" className="col-md-3">
-          {token ? <button style={{width:"80px" , borderRadius:"8px" , marginLeft:"35%"}} id="logout" onClick={handleLogout}>Logout</button> : <form className="signform">
-            <button type="button" id="signin" className="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Sign In</button>
+          {token ? <button className="signinbuttonn" style={{width:"80px" , borderRadius:"8px" , marginLeft:"35%"}} id="logout" onClick={handleLogout}>Logout</button> : <form className="signform">
+            <button type="button" id="signin" className="btn btn-info btn-lg signinbutton" data-toggle="modal" data-target="#myModal1">Sign In</button>
 
-            <button type="button" id="signup" className="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Up</button>
+            <button type="button" id="signup" className="btn btn-info btn-lg signinbutton" data-toggle="modal" data-target="#myModal">Sign Up</button>
           </form>
           }
           {token ? 

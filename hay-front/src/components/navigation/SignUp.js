@@ -147,12 +147,11 @@ const SignUp = () => {
                                     setPassword(e.target.value);
                                 }} />
 
-                                <button id="signin" style={{ width: "120px", margin: "2% auto", borderRadius: "15px" }} onClick={Register}>Submit</button>
+                                <button className="signupbtn" id="signin" style={{ width: "120px", margin: "2% auto", borderRadius: "15px" }} onClick={Register}>Submit</button>
                             </form>
 
                         </div>
                         <div className="modal-footer">
-                            <button type="button" id="signin" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
 
