@@ -25,6 +25,8 @@ const Contact = () => {
   const [nameStatus, setNameStatus] = useState("");
   const [emailStatus, setEmailStatus] = useState("");
   const [messageStatus, setMessageStatus] = useState("");
+  const [imageLanguage, setImageLanguage] = useState(false);
+
 
   useEffect(() => {
     AOS.init({
@@ -91,21 +93,20 @@ const Contact = () => {
           >
             {/* <h1 className="title____contact_front">Contact us</h1> */}
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h1
-              style={{ paddingTop: "10%", fontSize: "40px" }}
-              className="title"
-            >
-              Contact Us
-            </h1>
-            <h3>
-              You can always feel free to contact us for inquiries,<br></br>{" "}
-              requests and other concerns.
-            </h3>
+          
+            <span className="label3" style={{ color: "white" , position:"absolute" ,left:"46%" ,top:"48.7%" ,color:"white" }}>Ar</span>
+        <label  style={{ position:"absolute",left:"48%" ,top:"47.7%"}} className="switch switch2">
+          <input style={{  top:"45%"}}
+            type="checkbox"
+            onChange={(e) => {
+              setImageLanguage(e.target.checked);
+            }}
+          />
+          <span className="slider round"></span>
+        </label>
+        <span className="label5" style={{ color: "white" , position:"absolute" ,left:"54%" ,top:"48.7%" ,color:"white" }}>En</span>
+        { imageLanguage === true ?  <h1 style={{ paddingTop: "14%", fontSize:"25px" }} className="title">Don't hesitate to contact us!</h1> : <h1 style={{ paddingTop: "14%" , fontSize:"25px" }} className="title">لا تتردد أبداً في التواصل معنا  للاستفسارات وفرص التعاون</h1>  }
+
           </div>
         </div>
         <img

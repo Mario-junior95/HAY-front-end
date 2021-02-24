@@ -35,7 +35,7 @@
   border-bottom-right-radius: 25px !important;
 }
 .booksession {
-  background: url(../../images/booksession.jpeg);
+  background: url('../../images/sessionspage.png');
   background-attachment: fixed;
   background-size: cover;
   overflow-x: hidden !important;
@@ -203,11 +203,6 @@ body[data-aos-easing="ease"] [data-aos] {
   padding-top: 15%;
   border-bottom-left-radius: 25px !important;
   border-bottom-right-radius: 25px !important;
-}
-.booksession {
-  background: url(../../Images/sessions\ page.png);
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .group-therapy img {

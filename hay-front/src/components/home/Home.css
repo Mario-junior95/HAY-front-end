@@ -298,7 +298,7 @@
 
 @media only screen and (max-width: 480px) {
   .homeimage {
-    margin-top: -25%;
+    margin-top: -31%!important;
     height: 80vw !important;
   }
   .signinbutton {
@@ -429,7 +429,7 @@
 
 @media only screen and (max-width: 320px) {
   .homeimage {
-    margin-top: -25%;
+    margin-top: -32%!important;
     height: 120vw !important;
   }
   .HomeButtons {

@@ -23,7 +23,7 @@ const Blog = () => {
 
   useEffect(() => {
     const getBlogs = async () => {
-      const response = await fetch("http://localhost:8000/api/blogs");
+      const response = await fetch("http://localhost:8000/api/blogs" );
       const data = await response.json();
       setData([...data]);
       console.log(data);
@@ -49,6 +49,8 @@ const Blog = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [img, setImg] = useState("");
+  const [imageLanguage, setImageLanguage] = useState(false);
+
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -56,7 +58,11 @@ const Blog = () => {
     data.append("email", email);
 
     try {
-      await Axios.post("http://localhost:8000/api/subscribers", data).then(
+      await Axios.post("http://localhost:8000/api/subscribers", data , {
+        headers: {
+          "content-type": "multipart/form-data",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        }}).then(
         (response) => {
           console.log(response.data);
           setRender((prev) => !prev);
@@ -96,12 +102,20 @@ const Blog = () => {
       <Navigation />
 
       <div className="subscribe____main">
-        <h1 style={{ paddingTop: "10%", fontSize: "40px" }} className="title">
-          HAY Blogs
-        </h1>
-        <h1 style={{ fontSize: "40px" }} className="titletwo">
-          We Rise By Lifting Others
-        </h1>
+      <span className="label1" style={{ color: "white" , position:"absolute" ,left:"46%" ,top:"48.7%" ,color:"white" }}>Ar</span>{" "}
+        <label style={{ position:"absolute",left:"48%" ,top:"47.7%"}} className="switch switch1">
+          <input style={{  top:"45%"}}
+            type="checkbox"
+            onChange={(e) => {
+              setImageLanguage(e.target.checked);
+            }}
+          />
+          <span className="slider round"></span>
+        </label>
+        <span className="label2" style={{ color: "white" , position:"absolute" ,left:"54%" ,top:"48.7%" ,color:"white" }}>En</span>
+        { imageLanguage === true ?  <h1 style={{ paddingTop: "14%", fontSize:"25px" }} className="title"> This is your place to  learn more mental health.</h1> : <h1 style={{ paddingTop: "14%" , fontSize:"25px" }} className="title">هنا مساحتك الآمنة لمعرفة المزيد حول مواضيع الصحة النفسية</h1>  }
+
+       
       </div>
       <span
         className="numberofSubs"

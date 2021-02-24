@@ -19,6 +19,7 @@ const Events = () => {
   const [language, setLanguage] = useState(false);
   const [data, setData] = useState([]);
   const [testimonialData, setTestimonialData] = useState([]);
+  const [imageLanguage, setImageLanguage] = useState(false);
   const [webinar, setWebinar] = useState({
     id: "",
     title: "",
@@ -66,6 +67,60 @@ const Events = () => {
   return (
     <div className="event-page">
       <Navigation />
+      <div className="events-banner" style={{ paddingBottom: "26%" }}>
+        {/* <h1 className="title____contact_front">Contact us</h1> */}
+        <br />
+
+        <span
+          className="label3"
+          style={{
+            color: "white",
+            position: "absolute",
+            left: "46%",
+            top: "48.7%",
+            color: "white",
+          }}
+        >
+          Ar
+        </span>
+        <label
+          style={{ position: "absolute", left: "48%", top: "47.7%" }}
+          className="switch switch2"
+        >
+          <input
+            style={{ top: "45%" }}
+            type="checkbox"
+            onChange={(e) => {
+              setImageLanguage(e.target.checked);
+            }}
+          />
+          <span className="slider round"></span>
+        </label>
+        <span
+          className="label5"
+          style={{
+            color: "white",
+            position: "absolute",
+            left: "54%",
+            top: "48.7%",
+            color: "white",
+          }}
+        >
+          En
+        </span>
+        {imageLanguage === true ? (
+          <h1 style={{ paddingTop: "14%", fontSize: "25px" }} className="title">
+            Our up-coming events and sessions <br></br>are here to help with
+            your mental health.
+          </h1>
+        ) : (
+          <h1 style={{ paddingTop: "14%", fontSize: "25px" }} className="title">
+            تعرف على فعالياتنا وأنشطتنا <br></br>القادمة لمساعدتك في تحسين صحتك
+            النفسية
+          </h1>
+        )}
+      </div>
+
       <div className="event-wrapper">
         <div className="event">
           <span style={{ color: "black" }}>Ar</span>{" "}
@@ -87,7 +142,10 @@ const Events = () => {
                 JSON.stringify(webinar.description_ar).slice(1, 50) + "...";
               return (
                 <div className="event-card" key={webinar.id}>
-                  <div className="event-card-wrapper">
+                  <div
+                    className="event-card-wrapper"
+                    style={{ borderRadius: "25px" }}
+                  >
                     <div className="image">
                       <img
                         src={"http://localhost:8000/storage/" + webinar.image}
@@ -220,7 +278,10 @@ const Events = () => {
                 " ...";
               return (
                 <div className="event-card" key={testimonial.id}>
-                  <div className="event-card-wrapper">
+                  <div
+                    className="event-card-wrapper"
+                    style={{ borderRadius: "25px" }}
+                  >
                     <div className="image-testimonial">
                       {testimonial.image !== "null" ? (
                         <img

@@ -8,7 +8,11 @@
   background: url("../../Images/contact us page.jpg");
   background-size: cover;
   background-attachment: fixed;
+  padding-top: 10%!important;
   margin-top: -11%;
+  padding-bottom: -20%!important;
+}
+.contact-banner > .title{
 }
 
 .contact__form__container {
@@ -86,6 +90,7 @@
 .contact__form__card .global____inputs___contact::placeholder {
   color: black;
 }
+
 
 .contact__form__card .global___textarea_________contact {
   width: 100%;
@@ -196,16 +201,26 @@
   .contact__us__img {
     margin-left: 0.2% !important;
   }
+  .contact-banner{
+    height:55vh!important;
+  }
+
 }
 @media screen and (max-width: 480px) {
   .contact__form__card {
     width: 80%;
     margin-left: 3%;
+  
   }
   .contact__us__img {
     margin-left: 6%;
   }
   .join__us__contact__title {
     padding-bottom: 80% !important;
+    margin-top: -20%;
+  }
+  .contact-banner{
+    margin-top: -32%!important;
+    height: 45vh;
   }
 }

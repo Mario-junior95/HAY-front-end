@@ -77,6 +77,14 @@ body {
   transition: 0.4s;
   transform: scale(0.7);
 }
+.events-banner{
+  background: url('./Images//events\ page.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 10%!important;
+  margin-top: -11%;
+  padding-bottom: -20%!important;
+}
 
 .slider:before {
   position: absolute;
@@ -106,4 +114,31 @@ input:checked + .slider:before {
 
 .footer {
   overflow: hidden !important;
+}
+@media only screen and (max-width:480px){
+ .switch1{
+   top:16%!important;
+   left:45%!important;
+ }
+ .label1{
+   top:16.5%!important;
+   left:42%!important;
+ }
+ .label2{
+  top:16.5%!important;
+  left:57%!important;
+}
+
+.switch2{
+  top:14%!important;
+  left:45%!important;
+}
+.label3{
+  top:14.5%!important;
+  left:42%!important;
+}
+.label5{
+ top:14.5%!important;
+ left:57%!important;
+}
 }
