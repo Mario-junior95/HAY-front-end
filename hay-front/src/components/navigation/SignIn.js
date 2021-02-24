@@ -92,12 +92,11 @@ const SignIn = (props) => {
                                 <input value={password} type="password" placeholder="password" onChange={(e) => {
                                     setPassword(e.target.value);
                                 }} />
-                                <button id="signin" style={{ width: "90px", borderRadius: "15px" }} onClick={login}>Submit</button>
+                                <button className="signinbtn" id="signin" style={{ width: "90px", borderRadius: "15px" }} onClick={login}>Submit</button>
                             </form>
 
                         </div>
                         <div className="modal-footer">
-                            <button id="signin" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
 

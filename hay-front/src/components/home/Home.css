@@ -8,7 +8,7 @@
   width: 100%;
   margin: 0 auto;
   background-color: rgb(24, 21, 21);
-
+  height: fit-content !important;
   padding-bottom: 5%;
 }
 
@@ -165,7 +165,6 @@
   font-family: "Arapey", serif;
   color: block;
 }
-
 .wave {
   display: flex;
   justify-content: center;
@@ -239,5 +238,263 @@
   40%,
   100% {
     transform: translateY(0px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homeimage {
+    margin-top: -25%;
+    height: 80vw !important;
+  }
+  .signinbutton {
+    margin-top: -4% !important;
+  }
+  #logout {
+    margin-top: -4% !important;
+  }
+  #logo {
+    left: 85%;
+    margin-top: -6%;
+  }
+  .title {
+    padding-top: 35% !important;
+    font-size: 25px !important;
+  }
+  .titletwo {
+    font-size: 25px !important;
+  }
+  .Home {
+    height: fit-content !important;
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    height: 210vh !important;
+    margin-top: -30% !important;
+  }
+  .flex-inner {
+    width: 100% !important;
+    padding-bottom: 15%;
+  }
+  .flex-inner:nth-child(2) {
+    margin-top: -50% !important;
+  }
+  .flex-inner p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .flex-inner img {
+    height: 50% !important;
+    width: 60% !important;
+  }
+
+  .booknow {
+    position: static !important;
+  }
+  .wave {
+    font-size: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homeimage {
+    margin-top: -25%;
+    height: 80vw !important;
+  }
+  .signinbutton {
+    margin-top: -4% !important;
+  }
+  #logout {
+    margin-top: -4% !important;
+  }
+  #logo {
+    left: 85%;
+    margin-top: -6%;
+  }
+  .title {
+    padding-top: 35% !important;
+    font-size: 25px !important;
+  }
+  .titletwo {
+    font-size: 25px !important;
+  }
+  .Home {
+    height: fit-content !important;
+  }
+  .editprofile {
+    position: static !important;
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    height: 210vh !important;
+    margin-top: -30% !important;
+  }
+  .flex-inner {
+    width: 100% !important;
+    padding-bottom: 15%;
+  }
+  .flex-inner:nth-child(2) {
+    margin-top: -50% !important;
+  }
+  .flex-inner p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .flex-inner img {
+    height: 50% !important;
+    width: 60% !important;
+  }
+
+  .booknow {
+    position: static !important;
+  }
+  .wave {
+    font-size: 10px !important;
+  }
+  .signupbtn {
+    position: static !important;
+  }
+  .close {
+    position: static !important;
+  }
+  .signinbtn {
+    position: static !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homeimage {
+    margin-top: -25%;
+    height: 80vw !important;
+  }
+  .signinbutton {
+    margin-top: -4% !important;
+  }
+  #logout {
+    margin-top: -4% !important;
+  }
+  #logo {
+    left: 85%;
+    margin-top: -6%;
+  }
+  .title {
+    padding-top: 35% !important;
+    font-size: 25px !important;
+  }
+  .titletwo {
+    font-size: 25px !important;
+  }
+  .Home {
+    height: fit-content !important;
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    height: 210vh !important;
+    margin-top: -30% !important;
+  }
+  .flex-inner {
+    width: 100% !important;
+    padding-bottom: 15%;
+  }
+  .flex-inner:nth-child(2) {
+    margin-top: -50% !important;
+  }
+  .flex-inner p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .flex-inner img {
+    height: 50% !important;
+    width: 60% !important;
+  }
+
+  .booknow {
+    position: static !important;
+  }
+  .wave {
+    font-size: 10px !important;
+  }
+  .signupbtn {
+    position: static !important;
+  }
+  .close {
+    position: static !important;
+  }
+  .signinbtn {
+    position: static !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .homeimage {
+    margin-top: -25%;
+    height: 120vw !important;
+  }
+  .HomeButtons {
+    position: static !important;
+    min-width: 80px !important;
+    padding-top: 17% !important;
+    height: 45px !important;
+  }
+  .signinbutton {
+    margin-top: -4% !important;
+  }
+  #logout {
+    margin-top: -4% !important;
+  }
+  #logo {
+    left: 85%;
+    margin-top: -6%;
+  }
+  .title {
+    padding-top: 35% !important;
+    font-size: 18px !important;
+  }
+  .titletwo {
+    font-size: 18px !important;
+  }
+  .Home {
+    height: fit-content !important;
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    height: 210vh !important;
+    margin-top: -30% !important;
+  }
+  .flex-inner {
+    width: 100% !important;
+    padding-bottom: 15%;
+  }
+  .flex-inner:nth-child(2) {
+    margin-top: -50% !important;
+  }
+  .flex-inner p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .flex-inner img {
+    height: 45% !important;
+    width: 95% !important;
+  }
+
+  .booknow {
+    position: static !important;
+    padding-top: 5% !important;
+    font-size: 14px !important;
+  }
+  .wave {
+    font-size: 7px !important;
+  }
+  .signupbtn {
+    position: static !important;
+  }
+  .close {
+    position: static !important;
+  }
+  .signinbtn {
+    position: static !important;
   }
 }
