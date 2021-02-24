@@ -91,11 +91,7 @@ const Contact = () => {
           >
             {/* <h1 className="title____contact_front">Contact us</h1> */}
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+          
             <h1
               style={{ paddingTop: "10%", fontSize: "40px" }}
               className="title"
