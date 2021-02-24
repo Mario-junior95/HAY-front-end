@@ -27,7 +27,7 @@ function TimeModal(props) {
         expireToken();
         return window.location.reload();
       } else {
-        setTime(response.data);
+        setTime(response.data.time);
       }
     });
   }, [render]);
