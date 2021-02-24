@@ -241,13 +241,14 @@ nav > .v:hover::before{
     display: none;
   }
 
+
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
     right: 18px;
-    top: 46px;
+    top: 17px!important;
   }
   .bm-menu-wrap {
     -webkit-transition: none !important;
@@ -255,6 +256,30 @@ nav > .v:hover::before{
     -o-transition: none !important;
     transition: 0.2s ease-in-out !important;
   }
+  nav > a:hover::before{
+    content: "  ";
+    border-bottom: 1px white solid;
+    position: absolute;
+    padding-right: 1px;
+    border-width: 2px;
+    margin-top:15px;
+    animation:growline 1 ease-in .5s forwards;
+  }
+  @keyframes growline{
+    0%{
+      padding-right: 1px;
+  
+    }
+    100%{
+      padding-right: 80px;
+  
+    }
+  }
+  nav > a:hover::before{
+    content: "  ";
+   display:none!important;
+  }
+
 
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
@@ -388,6 +413,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     margin-left: 3%;
     margin-top: 6% !important;
   }
+
 }
 
 /*------------------------------------Sidenav css-------------------------------------------- */
@@ -399,14 +425,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .main-nav {
     display: none;
   }
-
+  nav > a:hover::before{
+    content: "  ";
+   display:none!important;
+  }
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
     right: 18px;
-    top: 46px;
+    top: 17px;
   }
   .bm-menu-wrap {
     -webkit-transition: none !important;
@@ -558,6 +587,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 @media only screen and (max-width: 320px) {
   #side-nav {
     display: block;
+  }
+  nav > a:hover::before{
+    content: "  ";
+   display:none!important;
   }
 
   .main-nav {

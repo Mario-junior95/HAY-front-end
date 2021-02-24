@@ -28,14 +28,13 @@ const ProfileModal = (props) => {
                                 <p><span style={{fontWeight:"bold"}}>Interesets : </span>{localStorage.getItem('interests')}</p>
                                 <p><span style={{fontWeight:"bold"}}>Educations : </span>{localStorage.getItem('education')}</p>
             <div style={{display:"grid" , gridTemplateColumns:"1fr"}}>
-            <button type="button" id="signin" style={{width:"50%" , margin:"0 auto"}} className="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">Edit profile</button>
-            <button type="button" id="signin" style={{width:"50%" , margin:"2% auto"}} className="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal4">Edit Password</button>
+            <button type="button" id="signin" style={{width:"50%" , margin:"0 auto"}} className="btn btn-info btn-lg editprofile" data-toggle="modal" data-target="#myModal3">Edit profile</button>
+            <button type="button" id="signin" style={{width:"50%" , margin:"2% auto"}} className="btn btn-info btn-lg editprofile" data-toggle="modal" data-target="#myModal4">Edit Password</button>
             </div>
 
                             </center>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" id="signup" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
 

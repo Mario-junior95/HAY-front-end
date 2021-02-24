@@ -193,6 +193,22 @@ body[data-aos-easing="ease"] [data-aos] {
   margin-top: 15vw;
   margin-bottom: 70px;
 }
+.card-footer {
+  width: 120% !important;
+  margin-left: -10%;
+  padding-bottom: 10%;
+  margin-top: 15% !important;
+  color: black;
+  font-size: 18px;
+  padding-top: 15%;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+.booksession {
+  background: url(../../Images/sessions\ page.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 .group-therapy img {
   width: 108% !important;

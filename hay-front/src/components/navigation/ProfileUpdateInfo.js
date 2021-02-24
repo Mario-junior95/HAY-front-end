@@ -91,11 +91,10 @@ const ProfileUpdateInfo = (props) => {
                                     setNewInterests(e.target.value)
                                 }} ></textarea><br></br>
 
-                                <button id="signin" style={{ width: "90px", borderRadius: "15px" }} onClick={handleChange}>Update</button>
+                                <button className="editprofile" id="signin" style={{ width: "90px", borderRadius: "15px" }} onClick={handleChange}>Update</button>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button id="signin" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
 

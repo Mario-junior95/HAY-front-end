@@ -3,6 +3,9 @@
 .left {
   text-align: left !important;
 }
+.right {
+  text-align: right !important;
+}
 .event-wrapper {
   width: 100%;
 }
@@ -10,8 +13,9 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5rem;
 }
-.event-webinar {
+.event-type {
   display: flex;
   /* justify-content: space-around; */
   flex-wrap: wrap;
@@ -31,7 +35,7 @@
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.432);
 }
 .event-info {
-  padding: 1.875rem 2.1875rem 1.5625rem 2.1875rem;
+  padding: 1rem 2rem 1.5rem 2rem;
   text-align: left;
   font-weight: 400;
 }
@@ -39,16 +43,18 @@
   width: 100%;
   height: auto;
 }
+
 .event-title {
   font-family: Barlow !important;
   color: #51b461;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
+  margin-top: 5px;
 }
 .event-date {
   font-family: Barlow !important;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 5px;
 }
 .event-desc {
@@ -56,16 +62,40 @@
   margin-top: 1.5rem;
 }
 .event-front-button {
-  margin-top: 1.25rem;
+  margin-top: 1rem;
 }
-.event-front-button button {
-  border: 2px solid;
-  padding: 1.5rem 5rem;
+.event-front-button button,
+.testimonial-button button {
+  border: 2px solid #51b461;
+  color: #51b461;
+  background-color: #fff;
+  padding: 1.2rem 5rem;
   font-size: 1.5rem;
   font-family: Barlow !important;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  /* transition: background width 0.3s ease-in-out, height 0.3s ease-in-out; */
+
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #51b461 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(90deg, #51b461 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.event-front-button button:focus,
+.testimonial-button button:focus {
+  outline: none;
+}
+.event-front-button button:hover {
+  color: white;
+  background-color: #51b461;
+  background-position: 0;
 }
 .event-list {
   display: flex;
@@ -77,7 +107,7 @@
 }
 .event-list li {
   font-family: Barlow !important;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Barlow;
   color: #999;
   line-height: 1.875rem;
@@ -85,21 +115,109 @@
 .event-icon {
   margin-right: 0.5rem;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.event-icon-right {
+  margin-right: 0 !important;
+  margin-left: 0.8rem;
 }
 .event-list li strong {
   font-weight: 550;
   text-transform: uppercase;
 }
-.event-list > li:not(:first-child) {
-  margin-left: 3rem;
+.event-list > li:first-child {
+  margin-right: 3rem;
+  /* margin-bottom: 1rem; */
 }
-@media only screen and (max-width: 970px) {
+.first-child-right {
+  margin-right: 0rem !important;
+  margin-left: 2rem;
+}
+.testimonial-section-title {
+  margin-bottom: 1rem;
+}
+.testimonial-section-title-inner {
+  display: flex;
+  padding: 0 0 4.3rem;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonial-section-title-inner span {
+  color: #51b461;
+  text-transform: uppercase;
+  font-family: Barlow !important;
+  font-weight: 500;
+  font-size: 2.5rem;
+  letter-spacing: 5.8px;
+}
+.testimonial-section-title-inner h2 {
+  margin-top: 1rem;
+  line-height: 3.75rem;
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin-bottom: 0 !important;
+  font-family: Barlow !important;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.726);
+}
+.testimonial-section-title-inner .square-icon {
+  color: #51b461;
+  margin-top: 3rem;
+  height: 2.125rem;
+  width: 2.125rem;
+  transform: rotate(45deg) translateX(-50%);
+  transform-origin: left;
+}
+.event-testimonial .event-card {
+  margin-top: 5%;
+}
+.image-testimonial img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* border: 5px solid grey; */
+  margin-top: -15%;
+}
+.testimonial-info h2 {
+  color: #51b461;
+  text-transform: none;
+  font-size: 25px;
+  margin: 15px 0px 0px;
+  font-family: Barlow !important;
+}
+.testimonial-info p {
+  color: rgba(0, 0, 0, 0.397);
+}
+.testimonial-description {
+  padding: 10px 20px;
+  font-family: Barlow !important;
+}
+.quote-icon {
+  color: #51b462;
+  margin: 1rem;
+}
+
+.quote-icon-right {
+  margin-bottom: -15px;
+}
+.testimonial-button button {
+  color: white;
+  background-color: #51b461;
+  margin: 30px;
+}
+.testimonial-button button:hover {
+  color: #51b461;
+  background-color: #fff;
+}
+@media only screen and (max-width: 800px) {
   .event-card {
     width: 50%;
   }
+  /* .event-front-button button {
+    padding: 1.1rem 3rem;
+  } */
 }
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 600px) {
   .event-card {
     width: 100%;
   }
