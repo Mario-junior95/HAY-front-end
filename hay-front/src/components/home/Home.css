@@ -1,251 +1,243 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Spartan:wght@300&display=swap');
-*{
-    font-family: 'Montserrat Alternates', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Spartan:wght@300&display=swap");
+* {
+  font-family: "Montserrat Alternates", sans-serif;
 
-    font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 }
-.Home{
-    width:100%;
-    margin: 0 auto;
-     background-color: rgb(24, 21, 21);
-     
-     padding-bottom: 5%;
-    
-}
+.Home {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(24, 21, 21);
 
-.Home div{
-width:86%;
-margin:3% auto;
-color:white;
-font-size: 18px;
-
+  padding-bottom: 5%;
 }
 
-.Home h3{
-    margin-top:5%;
-    color:white;
-    font-size: 30px;
-}
-.englishmissions{
-    display:flex;
-    flex-direction: column;
-}
-.arabicmissions{
-    display:flex;
-    flex-direction: column;
+.Home div {
+  width: 86%;
+  margin: 3% auto;
+  color: white;
+  font-size: 18px;
 }
 
-.englishvisions{
-    display:flex;
-    flex-direction: column;
+.Home h3 {
+  margin-top: 5%;
+  color: white;
+  font-size: 30px;
 }
-.arabicvisions{
-    display:flex;
-    flex-direction: column;
+.englishmissions {
+  display: flex;
+  flex-direction: column;
+}
+.arabicmissions {
+  display: flex;
+  flex-direction: column;
 }
 
+.englishvisions {
+  display: flex;
+  flex-direction: column;
+}
+.arabicvisions {
+  display: flex;
+  flex-direction: column;
+}
 
-
-.footer{
-    background-color: rgb(24, 21, 21);
-    padding:2%;
-    color:white;
+.footer {
+  background-color: rgb(24, 21, 21);
+  padding: 2%;
+  color: white;
 }
 .fa-instagram {
-    background: #125688;
-    color: white;
-  }
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-
-  .title{
-    position: relative;
-    margin: 0;
-    font-size: 4em;
-    font-weight: 900;
-    color: rgb(56, 52, 52);
-    z-index: 1;
-    overflow: hidden;
+  background: #125688;
+  color: white;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
 }
 
-.title::before{
-    content: "";
-    position: absolute;
-    left: 110%;
-    width: 120%;
-    height: 100%;
-    background-color: white;
-    animation:animate 10s infinite;
+.title {
+  position: relative;
+  margin: 0;
+  font-size: 4em;
+  font-weight: 900;
+  color: rgb(56, 52, 52);
+  z-index: 1;
+  overflow: hidden;
 }
 
-@keyframes animate{
-    0%{
-left:120%;
-    }
-    30%{
-        opacity: 0.7;
+.title::before {
+  content: "";
+  position: absolute;
+  left: 110%;
+  width: 120%;
+  height: 100%;
+  background-color: white;
+  animation: animate 10s infinite;
+}
+
+@keyframes animate {
+  0% {
+    left: 120%;
+  }
+  30% {
+    opacity: 0.7;
     width: 100%;
-
-    }
-    50%{
-        opacity: 0.5;
+  }
+  50% {
+    opacity: 0.5;
     width: 80%;
+  }
+  60% {
+    opacity: 0.3;
+    width: 40%;
+  }
+  80% {
+    opacity: 0.2;
+    width: 10%;
+  }
+  90% {
+    opacity: 0;
+    width: -20%;
+  }
+  100% {
+    left: -20%;
 
-    }
-    60%{
-        opacity: 0.3;
-        width: 40%;
-    }
-    80%{
-        opacity: 0.2;
-        width: 10%;
-    }
-    90%{
-        opacity: 0;
-        width: -20%;
-    }
-    100%{
-left:-20%;
-
-opacity: 0;
-    }
+    opacity: 0;
+  }
 }
 
-.titletwo{
-    position: relative;
-    margin: 0;
-    font-size: 4em;
-    font-weight: 900;
+.titletwo {
+  position: relative;
+  margin: 0;
+  font-size: 4em;
+  font-weight: 900;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.titletwo::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  width: 120%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.705);
+  animation: animatetwo 10s infinite;
+}
+
+@keyframes animatetwo {
+  0% {
+    left: -120%;
+    opacity: 0;
     color: white;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.titletwo::before{
-    content: "";
-    position: absolute;
-    left: 0%;
-    width: 120%;
-    height: 100%;
-    background-color:rgba(0, 0, 0, 0.705);
-    animation:animatetwo 10s infinite;
-}
-
-@keyframes animatetwo{
-    0%{
-     left:-120%;
-     opacity: 0;
-     color:white;
-    }
-    20%{
-        opacity: 0.3;
-    }
-    50%{
-        opacity: 0.7;
-
-    }
-    70%{
-        opacity:0.5;
-
-    }
-    80%{
-      opacity: 0.2;
-
-    }
-    100%{
-       left:120%;
-       opacity: 0;
-
-    }
-}
-
-
-.homeimage{
-    width:99.2vw;
-    margin-top: -10.45%;
-    background-image: url('../../Images//HomePage.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    height:103vh;
-    
   }
-  
-  .homeimage h1{
-    font-size: 40px;
-    font-family: 'Arapey', serif;
-    color:block;
+  20% {
+    opacity: 0.3;
   }
+  50% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
 
-  .wave{
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      margin-left: 2%!important;
+.homeimage {
+  width: 99.2vw;
+  margin-top: -10.45%;
+  background-image: url("../../Images/Home-page.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 103vh;
+}
 
-    }
-    .wave span{
-        position: relative;
-        display: inline-block;
-        color:white;
-        font-size: 2em;
-        animation:jump 2s ease-in-out infinite;
-        animation-delay: calc(0.1s * var(--i));
-        margin-left: 10%;
-    }
-    @keyframes jump{
-        0%{
-            transform: translateY(0px);
-        }
-        20%{
-            transform: translateY(-20px);
-            opacity: 0;
-        }   30%{
-            transform: translateY(-20px);
-            opacity: 0;
-        }   20%{
-            transform: translateY(-20px);
-            opacity: 0;
-        }
-        40%,100%{
-            transform: translateY(0px);
-        }
-    }
+.homeimage h1 {
+  font-size: 40px;
+  font-family: "Arapey", serif;
+  color: block;
+}
 
-    .wavve{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        margin-left: 2%!important;
-  
-      }
-      .wavve span{
-          position: relative;
-          display: inline-block;
-          color:black;
-          font-size: 13px;
-          animation:jumpp 2s ease-in-out infinite;
-          animation-delay: calc(0.1s * var(--i));
-          margin-left: 10%;
-      }
-      @keyframes jumpp{
-          0%{
-              transform: translateY(0px);
-          }
-          20%{
-              transform: translateY(-20px);
-              opacity: 0.4;
-          }   30%{
-              transform: translateY(-20px);
-              opacity: 0.4;
-          }   20%{
-              transform: translateY(-20px);
-              opacity: 0.4;
-          }
-          40%,100%{
-              transform: translateY(0px);
-          }
-      }
+.wave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 2% !important;
+}
+.wave span {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-size: 2em;
+  animation: jump 2s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+  margin-left: 10%;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.wavve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 2% !important;
+}
+.wavve span {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 13px;
+  animation: jumpp 2s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+  margin-left: 10%;
+}
+@keyframes jumpp {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  20% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+}
