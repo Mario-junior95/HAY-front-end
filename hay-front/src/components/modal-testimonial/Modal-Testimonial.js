@@ -8,6 +8,7 @@ const ModalTestimonial = (props) => {
           <div className="modal-body">
             <div className="image">
               <img
+                style={{ height: "200px", width: "200px" }}
                 src={"http://localhost:8000/storage/" + props.testimonial.image}
                 alt="testimonial-image"
               />
