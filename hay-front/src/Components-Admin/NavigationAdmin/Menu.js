@@ -74,11 +74,12 @@ const Menu = ({ open }) => {
           className="image_nav"
           style={{ height: "105px", width: "105px" }}
         />
-        <Link to="/Admin-Management">Admin</Link>
+        <Link to="/Admin-Management">Admins</Link>
+        <Link to="/Admin-User">Users</Link>
         <Link to="/Admin-Home">Home</Link>
         <Link to="/Admin-Event">Events</Link>
-        <Link to="/Admin-Book">Book</Link>
-        <Link to="/Admin-Blog">Blog</Link>
+        <Link to="/Admin-Book">Books</Link>
+        <Link to="/Admin-Blog">Blogs</Link>
         <Link to="/Admin-Contact">Contact Us</Link>
         <PasswordForm />
         <span className="logout" type="btn btn-default" onClick={submit}>

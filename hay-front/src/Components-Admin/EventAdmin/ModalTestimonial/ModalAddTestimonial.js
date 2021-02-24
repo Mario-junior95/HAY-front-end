@@ -38,6 +38,7 @@ const ModalAddTestimonial = (props) => {
         });
     } catch (error) {
       if (error.response) {
+        console.log(error.response)
         setTitleErr(error.response.data.errors.title_ar);
         setTitleEnglishErr(error.response.data.errors.title_en);
         setDescriptionErr(error.response.data.errors.description_ar);
@@ -121,15 +122,23 @@ const ModalAddTestimonial = (props) => {
               <label htmlFor="type_en">Choose Testimonial English Type</label>
               <br />
               <select name="type_en" id="type_en">
-                <option value="professional">professional</option>
-                <option value="participant">participant</option>
+                <option value="Professionals Testimonial ">
+                  Professionals testimonial
+                </option>
+                <option value="Participants Testimonial">
+                  Participants testimonial
+                </option>
               </select>
               <br />
               <label htmlFor="type_ar">Choose Testimonial Arabic Type</label>
               <br />
               <select name="type_ar" id="type_ar">
-                <option value="professional">professional</option>
-                <option value="participant">participant</option>
+                <option value="شهادة من اختصاصيين في الصحة النفسية">
+                  شهادة من اختصاصيين في الصحة النفسية
+                </option>
+                <option value="شهادة من مشاركين في أنشطة وجلسات هاي">
+                  شهادة من مشاركين في أنشطة وجلسات هاي
+                </option>
               </select>
               <br />
               <input type="submit" value="create" />

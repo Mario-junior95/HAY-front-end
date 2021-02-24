@@ -35,7 +35,239 @@
   border-bottom-right-radius: 25px !important;
 }
 .booksession {
+  background: url(../../images/booksession.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden !important;
+}
+
+/**                New Css                */
+
+[data-aos^="fade"][data-aos^="fade"].group-therapy,
+.support-group[data-aos^="fade"][data-aos^="fade"].support-group {
+  width: 50%;
+}
+
+.wavve {
+  display: flex;
+  margin-top: -2vw;
+  width: 16%;
+  position: relative;
+  left: -33%;
+}
+
+.group-therapy img {
+  width: 110% !important;
+  margin-left: -5%;
+  height: 35vh;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: relative;
+}
+
+.wavve-right {
+  display: flex;
+  width: 16%;
+  position: relative;
+  bottom: 1.4vw;
+  left: 5vw;
+}
+
+.wavve-right span {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 13px;
+  animation: jumpp 2s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+  margin-left: 10%;
+}
+@keyframes jumpp {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  20% {
+    transform: translateY(-20px);
+    opacity: 0.4;
+  }
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.support-group {
+  margin-top: -2vw;
+  margin-left: 18vw;
+}
+
+body[data-aos-easing="ease"] [data-aos] {
+  transition-timing-function: ease;
+  /* width: 50% !important; */
+}
+
+/*       Responsive 480px  */
+
+@media only screen and (max-width: 480px) {
+  .Books_block {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-aos^="fade"][data-aos^="fade"].group-therapy {
+    width: 50%;
+    margin-left: 24vw;
+    margin-top: 15vw;
+  }
+
+  .support-group[data-aos^="fade"][data-aos^="fade"].support-group{
+    width: 50%;
+    margin-left: 24vw;
+    margin-top: 15vw;
+    margin-bottom: 20px;
+  }
+
+  .sessionmodal > #signin  , .sessionmodal > #signup {
+    position: static;
+  }
+
+  .wavve-right span {
+    position: static;
+    display: inline-block;
+    color: black;
+    font-size: 13px;
+    animation: jumpp 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+    margin-left: 10%;
+    margin-top: -2vw;
+}
+
+  .wavve {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -4vw;
+    font-size: 27px;
+    left: 23vw;
+    margin-top: 13px;
+  }
+
+  .wavve-right {
+    display: flex;
+    width: 16%;
+    position: relative;
+    bottom: -14.6vw;
+    left: -4vw;
+  }
+}
+
+
+/* Responsive 320px*/
+
+@media only screen and (max-width:320px){
+
+#group-therapyy{
+  margin-top:10px;
+}
+
+[data-aos^="fade"][data-aos^="fade"].group-therapy{
+  width: 71%;
+  margin-left: 15vw;
+  position: relative;
+  margin-top: 15vw;
+}
+
+.support-group[data-aos^="fade"][data-aos^="fade"].support-group {
+  width: 71%;
+  margin-left: 15vw;
+  position: relative;
+  margin-top: 15vw;
+  margin-bottom: 70px;
+}
+.card-footer {
+  width: 120% !important;
+  margin-left: -10%;
+  padding-bottom: 10%;
+  margin-top: 15% !important;
+  color: black;
+  font-size: 18px;
+  padding-top: 15%;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+.booksession {
   background: url(../../Images/sessions\ page.png);
   background-attachment: fixed;
   background-size: cover;
+}
+
+.group-therapy img {
+  width: 108% !important;
+  margin-left: -4%;
+  height: 35vh;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: relative;
+}
+}
+
+/*Responsive 600px*/
+
+@media only screen and (max-width:600px){
+  #signin ,#signup{
+    position: static;
+  }
+/* 
+  [data-aos^="fade"][data-aos^="fade"].group-therapy, .support-group[data-aos^="fade"][data-aos^="fade"].support-group {
+    width: 76%;
+  } */
+/* 
+  [data-aos^="fade"][data-aos^="fade"].group-therapy{
+    width: 76%;
+    margin-top: 14vw;
+  } */
+
+  /* .support-group[data-aos^="fade"][data-aos^="fade"].support-group {
+    width: 76%;
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-bottom: 8vw;
+  } */
+
+  /* .group-therapy img {
+    width: 107% !important;
+    margin-left: -4%;
+    height: 35vh;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    position: relative;
+} */
+
+
+/* .wavve {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 38%!important;
+    margin-top: 9px;
+} */
+
+/* .wavve-right {
+  display: flex;
+  width: 16%;
+  position: relative;
+  bottom: -1.6vw;
+  left: -4vw;
+} */
+
 }

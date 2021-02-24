@@ -116,8 +116,12 @@ const ModalEditTestimonial = (props) => {
                 id="type_en"
                 defaultValue={props.testimonial.type_en}
               >
-                <option value="professional">professional</option>
-                <option value="participant">participant</option>
+                <option value="Professionals Testimonial ">
+                  Professionals testimonial
+                </option>
+                <option value="Participants Testimonial">
+                  Participants testimonial
+                </option>
               </select>
               <br />
               <label htmlFor="type_ar">Choose Testimonial Arabic Type</label>
@@ -127,8 +131,12 @@ const ModalEditTestimonial = (props) => {
                 id="type_ar"
                 defaultValue={props.testimonial.type_ar}
               >
-                <option value="professional">professional</option>
-                <option value="participant">participant</option>
+                <option value="شهادة من اختصاصيين في الصحة النفسية">
+                  شهادة من اختصاصيين في الصحة النفسية
+                </option>
+                <option value="شهادة من مشاركين في أنشطة وجلسات هاي">
+                  شهادة من مشاركين في أنشطة وجلسات هاي
+                </option>
               </select>
               <br />
               <br />
