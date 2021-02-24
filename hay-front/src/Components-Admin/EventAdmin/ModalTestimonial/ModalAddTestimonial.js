@@ -11,7 +11,13 @@ const ModalAddTestimonial = (props) => {
   const [descriptionEnglishErr, setDescriptionEnglishErr] = useState("");
   const [dateErr, setDateErr] = useState("");
   const [imageErr, setImageErr] = useState("");
-
+  const clear = () => {
+    setTitleErr("");
+    setTitleEnglishErr("");
+    setDescriptionErr("");
+    setDescriptionEnglishErr("");
+    setDateErr("");
+  };
   const addTestimonial = async (e) => {
     e.preventDefault();
     const body = new FormData();
@@ -25,7 +31,12 @@ const ModalAddTestimonial = (props) => {
     body.append("image", e.target.image.files[0]);
     try {
       await axios
-        .post("http://localhost:8000/api/testimonial", body)
+        .post("http://localhost:8000/api/testimonial", body, {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: "Bearer " + localStorage.getItem("tokens"),
+          },
+        })
         .then(() => {
           setRenderTestimonial((prev) => !prev);
           Swal.fire({
@@ -35,10 +46,11 @@ const ModalAddTestimonial = (props) => {
             confirmButtonColor: "#3085d6",
             confirmButtonText: "ok",
           });
+          clear();
         });
     } catch (error) {
       if (error.response) {
-        console.log(error.response)
+        console.log(error.response);
         setTitleErr(error.response.data.errors.title_ar);
         setTitleEnglishErr(error.response.data.errors.title_en);
         setDescriptionErr(error.response.data.errors.description_ar);
@@ -50,7 +62,7 @@ const ModalAddTestimonial = (props) => {
   };
   return (
     <div className="modal fade " id="testimonial-add-modal" role="dialog">
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
             <h2 className="event-header">Add New Testimonial</h2>
@@ -67,61 +79,63 @@ const ModalAddTestimonial = (props) => {
           </div>
           <div className="modal-body">
             <form onSubmit={(e) => addTestimonial(e)}>
-              <label htmlFor="title_en">English Title</label>
-              <br />
+              <span style={{ color: "red" }}>{titleEnglishErr}</span>
               <textarea
                 name="title_en"
                 id="title_en"
+                className="event-textarea"
                 placeholder="type your testimonial English title here "
+                rows="4"
+                cols="48"
               />
               <br />
-              <span style={{ color: "red" }}>{titleEnglishErr}</span>
-              <br />
-              <label htmlFor="title_a">Arabic Title</label>
-              <br />
+
+              <span style={{ color: "red" }}>{titleErr}</span>
               <textarea
                 name="title_ar"
                 id="title_ar"
+                className="event-textarea"
                 placeholder="type your testimonial Arabic title here "
+                rows="4"
+                cols="48"
               />
               <br />
-              <span style={{ color: "red" }}>{titleErr}</span>
-              <br />
-              <label htmlFor="description_en">English Description</label>
-              <br />
+
+              <span style={{ color: "red" }}>{descriptionEnglishErr}</span>
               <textarea
                 name="description_en"
                 id="description_en"
+                className="event-textarea"
                 placeholder="type your testimonial English description here"
+                rows="4"
+                cols="48"
               />
               <br />
-              <span style={{ color: "red" }}>{descriptionEnglishErr}</span>
-              <br />
-              <label htmlFor="description_ar">Arabic Description</label>
-              <br />
+
+              <span style={{ color: "red" }}>{descriptionErr}</span>
               <textarea
                 name="description_ar"
                 id="description_ar"
+                className="event-textarea"
                 placeholder="type your testimonial Arabic description here"
+                rows="4"
+                cols="48"
               />
               <br />
-              <span style={{ color: "red" }}>{descriptionErr}</span>
-              <br />
-              <label htmlFor="image">Image</label>
-              <br />
+
+              <span style={{ color: "red" }}>{imageErr}</span>
               <input type="file" name="image" id="image" />
               <br />
-              <span style={{ color: "red" }}>{imageErr}</span>
-              <br />
-              <label htmlFor="date">Choose Testimonial Date</label>
-              <br />
+
+              <span style={{ color: "red" }}>{dateErr}</span>
               <input type="date" name="date" id="date" />
               <br />
-              <span style={{ color: "red" }}>{dateErr}</span>
-              <br />
-              <label htmlFor="type_en">Choose Testimonial English Type</label>
-              <br />
-              <select name="type_en" id="type_en">
+
+              <select
+                name="type_en"
+                id="type_en"
+                className="testimonial-admin-type"
+              >
                 <option value="Professionals Testimonial ">
                   Professionals testimonial
                 </option>
@@ -130,9 +144,12 @@ const ModalAddTestimonial = (props) => {
                 </option>
               </select>
               <br />
-              <label htmlFor="type_ar">Choose Testimonial Arabic Type</label>
-              <br />
-              <select name="type_ar" id="type_ar">
+
+              <select
+                name="type_ar"
+                id="type_ar"
+                className="testimonial-admin-type"
+              >
                 <option value="شهادة من اختصاصيين في الصحة النفسية">
                   شهادة من اختصاصيين في الصحة النفسية
                 </option>

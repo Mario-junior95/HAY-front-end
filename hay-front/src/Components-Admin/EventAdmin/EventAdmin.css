@@ -2,25 +2,25 @@
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  padding-bottom: 0px;
 }
 .row1 {
+  font-size: 18px !important;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
   margin: auto;
 }
 .row0 {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(220, 220, 220);
   min-height: 60px;
   align-items: center;
   margin: 2px;
-  /* padding: 60px; */
+  border-bottom: 2px solid #ddd;
 }
-.rowData:hover {
-  background-color: rgb(169, 169, 169);
-}
+
 .row1 {
   display: flex;
-  /* justify-content: space-around; */
   min-height: 60px;
   align-items: center;
 }
@@ -32,6 +32,7 @@
   white-space: nowrap;
   overflow: hidden;
   padding-right: 20px;
+  font-size: 15px;
 }
 .col00 {
   text-overflow: ellipsis;
@@ -80,11 +81,35 @@
   background-color: #51b461;
 }
 .event-modal {
-  text-align: left;
+  text-align: center;
 }
 .event-header {
   color: black;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .swal2-popup {
   width: 40%;
+}
+.event-textarea {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 9px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px;
+  width: 95%;
+  border: 2px solid #f6f6f6;
+  border-radius: 5px 5px 5px 5px;
+}
+.event-textarea:placeholder {
+  color: #cccccc;
+}
+.event-label {
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
 }

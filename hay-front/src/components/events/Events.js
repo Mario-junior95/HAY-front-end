@@ -211,7 +211,7 @@ const Events = () => {
         </div>
         <div className="event">
           <div className="event-type event-testimonial">
-            {testimonialData.map((testimonial) => {
+            {testimonialData.reverse().map((testimonial) => {
               let descTestimonialEn =
                 JSON.stringify(testimonial.description_en).slice(1, 100) +
                 "...";

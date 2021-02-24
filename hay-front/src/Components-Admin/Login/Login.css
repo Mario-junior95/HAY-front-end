@@ -112,8 +112,10 @@ input[type="reset"]:active {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="file"] ,
-input[type="date"]{
+input[type="file"],
+input[type="date"],
+input[type="time"],
+.testimonial-admin-type {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
