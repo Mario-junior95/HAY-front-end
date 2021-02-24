@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import NavigationAdmin from "../NavigationAdmin/NavigationAdmin";
-import ModalWebinar from "../../components/modal-webinar/Modal-Webinar";
+import ModalViewWebinar from "./ModalWebinar/ModalViewWebinar";
 import ModalAddWebinar from "./ModalWebinar/ModalAddWebinar";
 import ModalEditWebinar from "./ModalWebinar/ModalEditWebinar";
-import ModalTestimonial from "../../components/modal-testimonial/Modal-Testimonial";
+import ModalViewTestimonial from "./ModalTestimonial/ModalViewTestimonial";
 import ModalAddTestimonial from "./ModalTestimonial/ModalAddTestimonial";
 import ModalEditTestimonial from "./ModalTestimonial/ModalEditTestimonial";
 import WebinarAttendeeViewButton from "./ModalWebinar/WebinarAttendeeViewButton";
@@ -144,153 +144,181 @@ const EventAdmin = () => {
     <div>
       <NavigationAdmin />
       <div>
-        <input
-          type="button"
-          className="event-button"
-          data-toggle="modal"
-          data-target="#webinar-add-modal"
-          data-backdrop="static"
-          data-keyboard="false"
-          value="New Webinar"
-          onClick={() => setShowWebinarAdd(!showWebinarAdd)}
-        />
-        <input
-          type="button"
-          className="event-button"
-          data-toggle="modal"
-          data-target="#testimonial-add-modal"
-          data-backdrop="static"
-          data-keyboard="false"
-          value="New testimonial"
-          onClick={() => setShowTestimonialAdd(!showTestimonialAdd)}
-        />
-
-        <h2>
+        <h1 style={{ color: "black" }}>
           List of
           <select
+            style={{ marginLeft: "15px" }}
+            className="select-event"
             onChange={(e) => {
               setSelect(e.target.value);
             }}
             value={select}
           >
-            <option value="webinar">webinar</option>
-            <option value="testimonial">testimonial</option>
+            <option value="webinar" className="option">
+              webinars
+            </option>
+            <option value="testimonial" className="option">
+              testimonials
+            </option>
           </select>
-        </h2>
+        </h1>
       </div>
-      <div className="table">
+      {select === "webinar" ? (
         <div>
-          <div className="row1">
-            <div className="col0 col3 grow-1">Title</div>
-            <div className="col0 col3 grow-1">Date</div>
-            <div className="actionTitle col0 col3 grow-2">Action</div>
+          <div>
+            <input
+              type="button"
+              className="event-button"
+              data-toggle="modal"
+              data-target="#webinar-add-modal"
+              data-backdrop="static"
+              data-keyboard="false"
+              value="New Webinar"
+              style={{ width: "300px", padding: "15px 30px", fontSize: "15px" }}
+              onClick={() => setShowWebinarAdd(!showWebinarAdd)}
+            />
           </div>
+          <div className="table">
+            <div>
+              <div className="row1">
+                <div className="col0 col3 grow-1">Title</div>
+                <div className="col0 col3 grow-1">Date</div>
+                <div className="actionTitle col0 col3 grow-2">Action</div>
+              </div>
+            </div>
+            <div>
+              {currentPosts.map((webinar) => {
+                return (
+                  <div className="row0 rowData" key={webinar.id}>
+                    <div className="col0 col3 grow-1">{webinar.title_en} </div>
+                    <div className="col0 col3 grow-1">{webinar.date}</div>
+                    <div className="col0 col3 grow-2">
+                      <div className="action">
+                        <WebinarAttendeeViewButton
+                          key={webinar.id}
+                          listAttendees={webinar}
+                        />
+                        <input
+                          type="button"
+                          className="event-button"
+                          onClick={() => {
+                            passData(webinar);
+                          }}
+                          data-toggle="modal"
+                          data-target="#webinar-view-modal"
+                          value="view"
+                        />
+                        <input
+                          type="button"
+                          className="event-button"
+                          onClick={() => {
+                            setShowWebinarUpdate(!showWebinarUpdate);
+                            passData(webinar);
+                          }}
+                          data-toggle="modal"
+                          data-target="#webinar-edit-modal"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          value="update"
+                        />
+                        <input
+                          type="button"
+                          className="event-button"
+                          onClick={() => deleteAlert(webinar.id)}
+                          value="delete"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <Pagination
+            paginate={paginate}
+            postsPerPage={postsPerPage}
+            totalPosts={data.length}
+          />
         </div>
-        {select === "webinar" ? (
+      ) : (
+        <div>
           <div>
-            {currentPosts.map((webinar) => {
-              return (
-                <div className="row0 rowData" key={webinar.id}>
-                  <div className="col0 col3 grow-1">{webinar.title_en} </div>
-                  <div className="col0 col3 grow-1">{webinar.date}</div>
-                  <div className="col0 col3 grow-2">
-                    <div className="action">
-                      <WebinarAttendeeViewButton
-                        key={webinar.id}
-                        listAttendees={webinar}
-                      />
-                      <input
-                        type="button"
-                        className="event-button"
-                        onClick={() => {
-                          passData(webinar);
-                        }}
-                        data-toggle="modal"
-                        data-target="#webinar-modal"
-                        value="view"
-                      />
-                      <input
-                        type="button"
-                        className="event-button"
-                        onClick={() => {
-                          setShowWebinarUpdate(!showWebinarUpdate);
-                          passData(webinar);
-                        }}
-                        data-toggle="modal"
-                        data-target="#webinar-edit-modal"
-                        data-backdrop="static"
-                        data-keyboard="false"
-                        value="update"
-                      />
-                      <input
-                        type="button"
-                        className="event-button"
-                        onClick={() => deleteAlert(webinar.id)}
-                        value="delete"
-                      />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-            <Pagination
-              paginate={paginate}
-              postsPerPage={postsPerPage}
-              totalPosts={data.length}
+            <input
+              type="button"
+              className="event-button"
+              data-toggle="modal"
+              data-target="#testimonial-add-modal"
+              data-backdrop="static"
+              data-keyboard="false"
+              value="New testimonial"
+              style={{ width: "300px", padding: "15px 30px", fontSize: "15px" }}
+              onClick={() => setShowTestimonialAdd(!showTestimonialAdd)}
             />
           </div>
-        ) : (
-          <div>
-            {currentTestimonialPosts.map((testimonial) => {
-              return (
-                <div className="row0 rowData" key={testimonial.id}>
-                  <div className="col0 col3 grow-1">{testimonial.title_en}</div>
-                  <div className="col0 col3 grow-1">{testimonial.date}</div>
-                  <div className="col0 col3 grow-2">
-                    <div className="action">
-                      <input
-                        type="button"
-                        className="event-button"
-                        onClick={() => {
-                          passTestimonialData(testimonial);
-                        }}
-                        data-toggle="modal"
-                        data-target="#testimonial-modal"
-                        value="view"
-                      />
-                      <input
-                        type="button"
-                        className="event-button"
-                        onClick={() => {
-                          setShowTestimonialUpdate(!showTestimonialUpdate);
-                          passTestimonialData(testimonial);
-                        }}
-                        data-toggle="modal"
-                        data-target="#testimonial-edit-modal"
-                        data-backdrop="static"
-                        data-keyboard="false"
-                        value="update"
-                      />
-                      <input
-                        type="button"
-                        className="event-button"
-                        onClick={() => deleteAlert(testimonial.id)}
-                        value="delete"
-                      />
+          <div className="table">
+            <div>
+              <div className="row1">
+                <div className="col0 col3 grow-1">Title</div>
+                <div className="col0 col3 grow-1">Date</div>
+                <div className="actionTitle col0 col3 grow-2">Action</div>
+              </div>
+            </div>
+            <div>
+              {currentTestimonialPosts.map((testimonial) => {
+                return (
+                  <div className="row0 rowData" key={testimonial.id}>
+                    <div className="col0 col3 grow-1">
+                      {testimonial.title_en}
+                    </div>
+                    <div className="col0 col3 grow-1">{testimonial.date}</div>
+                    <div className="col0 col3 grow-2">
+                      <div className="action">
+                        <input
+                          type="button"
+                          className="event-button"
+                          onClick={() => {
+                            passTestimonialData(testimonial);
+                          }}
+                          data-toggle="modal"
+                          data-target="#testimonial-view-modal"
+                          value="view"
+                        />
+                        <input
+                          type="button"
+                          className="event-button"
+                          onClick={() => {
+                            setShowTestimonialUpdate(!showTestimonialUpdate);
+                            passTestimonialData(testimonial);
+                          }}
+                          data-toggle="modal"
+                          data-target="#testimonial-edit-modal"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          value="update"
+                        />
+                        <input
+                          type="button"
+                          className="event-button"
+                          onClick={() => deleteAlert(testimonial.id)}
+                          value="delete"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-            <Pagination
-              paginate={paginate}
-              postsPerPage={postsPerPage}
-              totalPosts={testimonialData.length}
-            />
+                );
+              })}
+            </div>
           </div>
-        )}
-      </div>
-      <ModalWebinar webinar={webinar} display={"none"} />
+          <Pagination
+            paginate={paginate}
+            postsPerPage={postsPerPage}
+            totalPosts={testimonialData.length}
+          />
+        </div>
+      )}
+
+      <ModalViewWebinar webinar={webinar} />
       {showWebinarAdd && (
         <ModalAddWebinar
           show={() => setShowWebinarAdd(!showWebinarAdd)}
@@ -305,7 +333,7 @@ const EventAdmin = () => {
         />
       )}
 
-      <ModalTestimonial testimonial={testimonial} />
+      <ModalViewTestimonial testimonial={testimonial} />
       {showTestimonialAdd && (
         <ModalAddTestimonial
           show={() => setShowTestimonialAdd(!showTestimonialAdd)}

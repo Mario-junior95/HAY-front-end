@@ -13,6 +13,16 @@ const ModalAddWebinar = (props) => {
   const [imageErr, setImageErr] = useState("");
   const [timeErr, setTimeErr] = useState("");
 
+  const clear = () => {
+    setTitleErr("");
+    setTitleEnglishErr("");
+    setDescriptionErr("");
+    setDescriptionEnglishErr("");
+    setDateErr("");
+    setImageErr("");
+    setTimeErr("");
+  };
+
   const addWebinar = async (e) => {
     e.preventDefault();
     const body = new FormData();
@@ -24,16 +34,24 @@ const ModalAddWebinar = (props) => {
     body.append("time", e.target.time.value);
     body.append("image", e.target.image.files[0]);
     try {
-      await axios.post("http://localhost:8000/api/webinar", body).then(() => {
-        setRenderWebinar((prev) => !prev);
-        Swal.fire({
-          title: "Added Successfully",
-          text: "New Webinar Is Added!",
-          icon: "success",
-          confirmButtonColor: "#3085d6",
-          confirmButtonText: "ok",
+      await axios
+        .post("http://localhost:8000/api/webinar", body, {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: "Bearer " + localStorage.getItem("tokens"),
+          },
+        })
+        .then(() => {
+          setRenderWebinar((prev) => !prev);
+          Swal.fire({
+            title: "Added Successfully",
+            text: "New Webinar Is Added!",
+            icon: "success",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "ok",
+          });
+          clear();
         });
-      });
     } catch (error) {
       if (error.response) {
         setTitleErr(error.response.data.errors.title_ar);
@@ -48,7 +66,7 @@ const ModalAddWebinar = (props) => {
   };
   return (
     <div className="modal fade " id="webinar-add-modal" role="dialog">
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
             <h2 className="event-header">Add New Webinar</h2>
@@ -64,64 +82,62 @@ const ModalAddWebinar = (props) => {
           </div>
           <div className="modal-body event-modal">
             <form onSubmit={(e) => addWebinar(e)}>
-              <label htmlFor="title_en">English Title</label>
-              <br />
-              <textarea
-                name="title_en"
-                id="title_en"
-                placeholder="type your webinar English title here "
-              />
-              <br />
               <span style={{ color: "red" }}>{titleEnglishErr}</span>
               <br />
-              <label htmlFor="title_a">Arabic Title</label>
+              <textarea
+                rows="4"
+                cols="48"
+                name="title_en"
+                id="title_en"
+                className="event-textarea"
+                placeholder=" English title "
+              />
+
+              <span style={{ color: "red" }}>{titleErr}</span>
               <br />
               <textarea
                 name="title_ar"
                 id="title_ar"
-                placeholder="type your webinar Arabic title here "
+                className="event-textarea"
+                placeholder="Arabic Title"
+                rows="4"
+                cols="48"
               />
-              <br />
-              <span style={{ color: "red" }}>{titleErr}</span>
-              <br />
-              <label htmlFor="description_en">English Description</label>
+
+              <span style={{ color: "red" }}>{descriptionEnglishErr}</span>
               <br />
               <textarea
                 name="description_en"
                 id="description_en"
-                placeholder="type your webinar English description here"
+                className="event-textarea"
+                placeholder="English Description "
+                rows="4"
+                cols="48"
               />
-              <br />
-              <span style={{ color: "red" }}>{descriptionEnglishErr}</span>
-              <br />
-              <label htmlFor="description_ar">Arabic Description</label>
+
+              <span style={{ color: "red" }}>{descriptionErr}</span>
               <br />
               <textarea
                 name="description_ar"
                 id="description_ar"
-                placeholder="type your webinar Arabic description here"
+                className="event-textarea"
+                placeholder="Arabic Description"
+                rows="4"
+                cols="48"
               />
-              <br />
-              <span style={{ color: "red" }}>{descriptionErr}</span>
-              <br />
-              <label htmlFor="image">Image</label>
+
+              <span style={{ color: "red" }}>{imageErr}</span>
               <br />
               <input type="file" name="image" id="image" />
               <br />
-              <span style={{ color: "red" }}>{imageErr}</span>
-              <br />
-              <label htmlFor="date">choose Webinar Date</label>
+              <span style={{ color: "red" }}>{dateErr}</span>
               <br />
               <input type="date" name="date" id="date" />
               <br />
-              <span style={{ color: "red" }}>{dateErr}</span>
-              <br />
-              <label htmlFor="time">choose Webinar Time</label>
-              <br />
-              <input type="time" name="time" id="time" />
-              <br />
               <span style={{ color: "red" }}>{timeErr}</span>
               <br />
+              <input type="time" name="time" id="time" />
+
               <input type="submit" value="Create" />
             </form>
           </div>

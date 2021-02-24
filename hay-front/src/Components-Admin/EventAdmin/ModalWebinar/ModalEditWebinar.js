@@ -19,7 +19,12 @@ const ModalEditWebinar = (props) => {
     }
     try {
       await axios
-        .post(`http://localhost:8000/api/webinar/${id}?_method=PUT`, body)
+        .post(`http://localhost:8000/api/webinar/${id}?_method=PUT`, body, {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: "Bearer " + localStorage.getItem("tokens"),
+          },
+        })
         .then(() => {
           setRenderWebinar((prev) => !prev);
           Swal.fire({
@@ -29,24 +34,14 @@ const ModalEditWebinar = (props) => {
             confirmButtonColor: "#3085d6",
             confirmButtonText: "ok",
           });
-          // .then((result) => {
-          //   if (result.isConfirmed) {
-          //     props.show();
-          //   }
-          // });
         });
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div
-      className="modal fade"
-      id="webinar-edit-modal"
-      role="dialog"
-      // aria-hidden="false"
-    >
-      <div className="modal-dialog">
+    <div className="modal fade" id="webinar-edit-modal" role="dialog">
+      <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
             <h2 className="event-header">Edit Current Webinar</h2>
@@ -61,47 +56,57 @@ const ModalEditWebinar = (props) => {
           </div>
           <div className="modal-body">
             <form onSubmit={(e) => editWebinar(e, props.webinar.id)}>
-              <label htmlFor="title_en">English Title</label>
-              <br />
+              <label className="event-label">English Title</label>
               <textarea
+                rows="4"
+                cols="48"
                 name="title_en"
                 id="title_en"
-                placeholder="type your webinar English title here "
-                defaultValue={props.webinar.title_ar}
-              />
-              <br />
-              <label htmlFor="title_a">Arabic Title</label>
-              <br />
-              <textarea
-                name="title_ar"
-                id="title_ar"
-                placeholder="type your webinar Arabic title here "
+                className="event-textarea"
+                placeholder="English Title "
                 defaultValue={props.webinar.title}
               />
               <br />
-              <label htmlFor="description_en">English Description</label>
               <br />
+              <label className="event-label">Arabic Title</label>
               <textarea
+                rows="4"
+                cols="48"
+                name="title_ar"
+                id="title_ar"
+                className="event-textarea"
+                placeholder="Arabic Title "
+                defaultValue={props.webinar.title_ar}
+              />
+              <br />
+              <br />
+              <label className="event-label">English Description</label>
+              <textarea
+                rows="4"
+                cols="48"
                 name="description_en"
                 id="description_en"
-                placeholder="type your webinar English description here"
+                className="event-textarea"
+                placeholder="English description"
                 defaultValue={props.webinar.description}
               />
               <br />
-              <label htmlFor="description_ar">Arabic Description</label>
               <br />
+              <label className="event-label">Arabic Description</label>
               <textarea
+                rows="4"
+                cols="48"
                 name="description_ar"
                 id="description_ar"
+                className="event-textarea"
+                placeholder="Arabic description"
                 defaultValue={props.webinar.description_ar}
               />
               <br />
-              <label htmlFor="image">Image</label>
-              <br />
+
               <input type="file" name="image" id="image" />
               <br />
-              <label htmlFor="date">Pick Webinar Date</label>
-              <br />
+
               <input
                 type="date"
                 name="date"
@@ -109,8 +114,7 @@ const ModalEditWebinar = (props) => {
                 defaultValue={props.webinar.date}
               />
               <br />
-              <label htmlFor="time">Pick Webinar Time</label>
-              <br />
+
               <input
                 type="time"
                 name="time"

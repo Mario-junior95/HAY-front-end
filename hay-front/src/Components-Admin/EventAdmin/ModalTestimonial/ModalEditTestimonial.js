@@ -19,7 +19,12 @@ const ModalEditTestimonial = (props) => {
     }
     try {
       await axios
-        .post(`http://localhost:8000/api/testimonial/${id}?_method=PUT`, body)
+        .post(`http://localhost:8000/api/testimonial/${id}?_method=PUT`, body, {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: "Bearer " + localStorage.getItem("tokens"),
+          },
+        })
         .then((response) => {
           setRenderTestimonial((prev) => !prev);
           Swal.fire({
@@ -42,7 +47,7 @@ const ModalEditTestimonial = (props) => {
       role="dialog"
       aria-hidden="false"
     >
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
             <h2 className="event-header">Edit Current Testimonial</h2>
@@ -66,8 +71,11 @@ const ModalEditTestimonial = (props) => {
               <textarea
                 name="title_en"
                 id="title_en"
+                className="event-textarea"
                 placeholder="type your testimonial English title here "
-                defaultValue={props.testimonial.title_ar}
+                rows="4"
+                cols="48"
+                defaultValue={props.testimonial.title}
               />
               <br />
               <label htmlFor="title_a">Arabic Title</label>
@@ -75,8 +83,11 @@ const ModalEditTestimonial = (props) => {
               <textarea
                 name="title_ar"
                 id="title_ar"
+                className="event-textarea"
                 placeholder="type your testimonial Arabic title here "
-                defaultValue={props.testimonial.title}
+                defaultValue={props.testimonial.title_ar}
+                rows="4"
+                cols="48"
               />
               <br />
               <label htmlFor="description_en">English Description</label>
@@ -84,8 +95,11 @@ const ModalEditTestimonial = (props) => {
               <textarea
                 name="description_en"
                 id="description_en"
+                className="event-textarea"
                 placeholder="type your testimonial English description here"
                 defaultValue={props.testimonial.description}
+                rows="4"
+                cols="48"
               />
               <br />
               <label htmlFor="description_ar">Arabic Description</label>
@@ -93,7 +107,10 @@ const ModalEditTestimonial = (props) => {
               <textarea
                 name="description_ar"
                 id="description_ar"
+                className="event-textarea"
                 defaultValue={props.testimonial.description_ar}
+                rows="4"
+                cols="48"
               />
               <br />
               <label htmlFor="image">Image</label>
@@ -114,6 +131,7 @@ const ModalEditTestimonial = (props) => {
               <select
                 name="type_en"
                 id="type_en"
+                className="testimonial-admin-type"
                 defaultValue={props.testimonial.type_en}
               >
                 <option value="Professionals Testimonial ">
@@ -129,6 +147,7 @@ const ModalEditTestimonial = (props) => {
               <select
                 name="type_ar"
                 id="type_ar"
+                className="testimonial-admin-type"
                 defaultValue={props.testimonial.type_ar}
               >
                 <option value="شهادة من اختصاصيين في الصحة النفسية">
@@ -140,7 +159,7 @@ const ModalEditTestimonial = (props) => {
               </select>
               <br />
               <br />
-              <input type="submit" value="edit" />
+              <input type="submit" value="update" />
             </form>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Avatar from "../../images/avatar.png";
 
 const ModalTestimonial = (props) => {
   return (
@@ -7,11 +8,21 @@ const ModalTestimonial = (props) => {
         <div className="modal-content">
           <div className="modal-body">
             <div className="image">
-              <img
-                style={{ height: "200px", width: "200px" }}
-                src={"http://localhost:8000/storage/" + props.testimonial.image}
-                alt="testimonial-image"
-              />
+              {props.testimonial.image !== "null" ? (
+                <img
+                  style={{ height: "200px", width: "200px" }}
+                  src={
+                    "http://localhost:8000/storage/" + props.testimonial.image
+                  }
+                  alt="testimonial-image"
+                />
+              ) : (
+                <img
+                  src={Avatar}
+                  style={{ height: "200px", width: "200px" }}
+                  alt="avatar testimonial image"
+                />
+              )}
             </div>
             <h2>{props.testimonial.title}</h2>
             <div>
