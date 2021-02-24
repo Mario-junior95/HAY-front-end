@@ -8,8 +8,9 @@ import UpdateSupportGroupForm from "./UpdateSupportGroupForm";
 import PsychoTrans from "./PsychoTrans";
 import ListSessionsTrans from "./ListSessionTrans";
 import TimeTrans from "./TimeTrans ";
-import ViewBookedSessionsTrans from './ViewBookedSessionsTrans ';
+import ViewBookedSessionsTrans from "./ViewBookedSessionsTrans ";
 import CreateSessionFrom from "./CreateSessionFrom";
+import AddGroupTherapyTrans from "./AddGroupTherapyTrans";
 
 const SupportGroup = () => {
   const [supportGroup, setSupportGroup] = useState([]);
@@ -32,6 +33,7 @@ const SupportGroup = () => {
           return window.location.reload();
         } else {
           return setSupportGroup(response.data);
+         
         }
       });
     } catch (error) {
@@ -39,10 +41,12 @@ const SupportGroup = () => {
     }
   }, [render]);
 
+
   return (
     <div className="container">
       <NavigationAdmin />
       <h1 style={{ marginTop: "5%" }}>Support Group</h1>
+      <AddGroupTherapyTrans render={{ setRender }} />
       <ViewBookedSessionsTrans />
       <Link to="/Admin-Book">Group therapy</Link>
       <Link to="/Admin-Book-Support">/ Support Group </Link>
@@ -64,25 +68,26 @@ const SupportGroup = () => {
               />
               <PsychoTrans render={{ setRender }} />
             </div>
+            <div
+              style={{ borderBottom: "2px green solid", marginTop: "2.5%" }}
+            ></div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1fr 1fr ",
+              }}
+            >
+              <h4 style={{ marginTop: "18%", fontWeight: "bold" }}>
+                Support Session
+              </h4>
+              <CreateSessionFrom />
+              <ListSessionsTrans render={{ setRender }} />
+              <TimeTrans render={{ setRender }} />
+            </div>
           </div>
         );
       })}
-
-      <div style={{ borderBottom: "2px green solid", marginTop: "2.5%" }}></div>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr 1fr ",
-        }}
-      >
-        <h4 style={{ marginTop: "18%", fontWeight: "bold" }}>
-          Support Session
-        </h4>
-        <CreateSessionFrom />
-        <ListSessionsTrans render={{ setRender }} />
-        <TimeTrans render={{ setRender }} />
-      </div>
     </div>
   );
 };

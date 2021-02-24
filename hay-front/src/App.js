@@ -19,6 +19,7 @@ import AdminBlog from "./Components-Admin/BlogAdmin/BlogAdmin";
 import AdminContact from "./Components-Admin/ContactAdmin/ContactAdmin";
 import AdminEvent from "./Components-Admin/EventAdmin/EventAdmin";
 import SupportGroup from "./Components-Admin/SupportGroup/SupportGroup";
+import AdminUser from "./Components-Admin/User/User";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -44,6 +45,11 @@ function App() {
           exact
           path="/Admin-Management"
           component={Admin}
+          isAuth={isAuth}
+        />
+        <ProtectedRoute
+          path="/Admin-User"
+          component={AdminUser}
           isAuth={isAuth}
         />
         <ProtectedRoute
