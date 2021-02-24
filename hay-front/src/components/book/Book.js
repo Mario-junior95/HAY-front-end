@@ -18,6 +18,8 @@ const Book = () => {
   const [length, setLength] = useState([]);
   const [session, setSession] = useState([]);
   const [supportLength , setSupportLength] = useState([]);
+  const [imageLanguage, setImageLanguage] = useState(false);
+
 
   useEffect(() => {
     Axios.get("http://localhost:8000/api/group-therapy").then((response) => {
@@ -59,12 +61,20 @@ const Book = () => {
       <div className="booksession">
         <Navigation />
         <div></div>
-        <h1 style={{ paddingTop: "10%", fontSize: "40px" }} className="title">
-          Book a Session
-        </h1>
-        <h1 style={{ fontSize: "40px" }} className="titletwo">
-          We Rise By Lifting Others
-        </h1>
+        <span className="label1" style={{ color: "white" , position:"absolute" ,left:"46%" ,top:"20.7%" ,color:"black" }}>Ar</span>{" "}
+        <label style={{ position:"absolute",left:"48%" ,top:"20%"}} className="switch switch1">
+          <input style={{  top:"45%"}}
+            type="checkbox"
+            onChange={(e) => {
+              setImageLanguage(e.target.checked);
+            }}
+          />
+          <span className="slider round"></span>
+        </label>
+        <span className="label2" style={{ color: "white" , position:"absolute" ,left:"54%" ,top:"20.7%" ,color:"black" }}>En</span>
+        { imageLanguage === true ?  <h1 style={{ paddingTop: "12%", fontSize:"25px" }} className="title"> Our priority is to provide you with<br></br> quality mental health services.</h1> : <h1 style={{ paddingTop: "12%" , fontSize:"25px"}} className="title">سنحرص على منحك افضل تجربة عبر <br></br>جلساتنا المتوفرة بمساعدة الاختصاصيين النفسيين</h1>  }
+
+       
         <div
           style={{
             width: "30%",
