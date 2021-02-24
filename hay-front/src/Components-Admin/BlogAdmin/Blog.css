@@ -219,7 +219,7 @@ body {
 
 .form___blog____edit__one {
   margin-top: -21.5%;
-  background-color: white;
+  background-color: white !important;
   height: 96vh;
   width: 90vh;
   margin-left: 30%;

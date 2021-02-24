@@ -4,6 +4,7 @@ import "./Blog.css";
 import Modal from "react-modal";
 import Avatar from "../../Images/avatar.png";
 import Pagination from "../../Paginate/Paginate";
+import ModalAddBlog from "./BlogAddModel";
 
 Modal.setAppElement("#root");
 
@@ -62,52 +63,6 @@ const BlogAdmin = () => {
     setHide(true);
   };
 
-  let handleClick = async () => {
-    let formData = new FormData();
-    formData.append("title_en", title);
-    formData.append("description_en", desc);
-    formData.append("title_ar", titless);
-    formData.append("description_ar", descss);
-    formData.append("image", image);
-
-    let response = await fetch("http://localhost:8000/api/blogs", {
-      method: "POST",
-      headers: {
-        "X-Requested-With": "XMLHttpRequest",
-      },
-      body: formData,
-    });
-
-    let dataStatus = await response;
-    if (dataStatus.ok == false) {
-      let dataJson = await response.json();
-      if (dataJson.errors.title_en) {
-        setTitleStatus(dataJson.errors.title_en[0]);
-      }
-      if (dataJson.errors.description_en) {
-        setDescStatus(dataJson.errors.description_en[0]);
-      }
-      if (dataJson.errors.title_ar) {
-        setTitlessStatus(dataJson.errors.title_ar[0]);
-      }
-      if (dataJson.errors.description_ar) {
-        setDescssStatus(dataJson.errors.description_ar[0]);
-      }
-      if (dataJson.errors.image) {
-        setImgStatus(dataJson.errors.image[0]);
-      }
-    } else {
-      let data = await response.text();
-      setTitle("");
-      setDesc("");
-      setTitless("");
-      setDescss("");
-      setImage("");
-      setRender(!render);
-      setTitleStatus(data);
-      setTitlessStatus(data);
-    }
-  };
   useEffect(() => {
     const getBlogs = async () => {
       const response = await fetch("http://localhost:8000/api/blogs");
@@ -156,7 +111,10 @@ const BlogAdmin = () => {
             type="submit"
             value="Add a blog"
             className="Add_Admin_btn"
-            onClick={() => setModalIsOpen(true)}
+            data-toggle="modal"
+            data-target="#blog-add-modal"
+            data-backdrop="static"
+            data-keyboard="false"
           />
         </div>
         <div className="subs">
@@ -382,91 +340,7 @@ const BlogAdmin = () => {
         postsPerPage={postsPerPage}
         totalPosts={data.length}
       />
-      <Modal
-        className="mod"
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        style={{
-          overlay: {
-            backgroundColor: "transparent",
-          },
-        }}
-      >
-        <div className="form___blog____edit__one">
-          <br />
-          <div className="en-status-title">
-            <p className="status---global">{titleStatus}</p>
-            <input
-              className="input_______blog"
-              type="text"
-              placeholder="English title"
-              onChange={(e) => {
-                setTitle(e.target.value);
-              }}
-              value={title}
-            />
-          </div>
-          <div className="ar-status-title">
-            <p className="status---global">{titlessStatus}</p>
-            <input
-              className="input_______blog"
-              type="text"
-              placeholder="عنوان عربي"
-              onChange={(e) => {
-                setTitless(e.target.value);
-              }}
-              value={titless}
-            />
-          </div>
-          <div className="en-status-desc">
-            <p className="status---global">{descStatus}</p>
-            <textarea
-              className="desc-----global"
-              placeholder="English description"
-              cols="20"
-              rows="3"
-              onChange={(e) => {
-                setDesc(e.target.value);
-              }}
-              value={desc}
-            ></textarea>
-          </div>
-          <div className="ar-status-desc">
-            <p className="status---global">{descssStatus}</p>
-            <textarea
-              className="desc-----global"
-              placeholder="الوصف العربي"
-              cols="20"
-              rows="3"
-              onChange={(e) => {
-                setDescss(e.target.value);
-              }}
-              value={descss}
-            ></textarea>
-          </div>
-          <p className="status---global">{imgStatus}</p>
-
-          <input
-            className="file__image"
-            type="file"
-            placeholder="image"
-            onChange={(e) => {
-              setImage(e.target.files[0]);
-            }}
-            required
-          />
-          <br />
-          <button className="add-blog-btn" type="submit" onClick={handleClick}>
-            Add Blog
-          </button>
-          <button
-            className="close---blog"
-            onClick={() => setModalIsOpen(false)}
-          >
-            X
-          </button>
-        </div>
-      </Modal>
+      <ModalAddBlog Render={{ setRender }} />
     </div>
   );
 };
