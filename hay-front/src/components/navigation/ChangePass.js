@@ -49,7 +49,6 @@ const ChangePass = () => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <h4 className="modal-title">Sign In</h4>
                         </div>
                         <div className="modal-body">
                             <center>
@@ -62,12 +61,11 @@ const ChangePass = () => {
                 <input type="password" placeholder="confirm new password" onChange={(e)=>{
                     setConfirmPass(e.target.value)
                 }}/>
-                <button id="signin" style={{width:"90px" , borderRadius:"15px"}} onClick={handleChange}>Submit</button>
+                <button className="editprofile" id="signin" style={{width:"90px" , borderRadius:"15px"}} onClick={handleChange}>Submit</button>
 
                             </center>
                         </div>
                         <div className="modal-footer">
-                            <button id="signin" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
 
