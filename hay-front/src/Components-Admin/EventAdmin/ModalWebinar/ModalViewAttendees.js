@@ -11,7 +11,7 @@ const ModalViewAttendees = (props) => {
             <div className="col0 col3">Phone</div>
           </div>
         </div>
-        {props.listAttendees.user.reverse().map((user) => {
+        {props.listAttendees.user.map((user) => {
           return (
             <div key={user.id}>
               <div className="row1" style={{ justifyContent: "space-between" }}>

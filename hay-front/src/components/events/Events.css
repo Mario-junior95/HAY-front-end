@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 .left {
   text-align: left !important;
 }
 .right {
   text-align: right !important;
 }
+
 .event-wrapper {
   width: 100%;
 }
@@ -134,12 +135,16 @@
   margin-right: 0rem !important;
   margin-left: 2rem;
 }
+.register-event-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .testimonial-section-title {
   margin-bottom: 1rem;
 }
 .testimonial-section-title-inner {
   display: flex;
-  padding: 0 0 4.3rem;
+  padding: 4rem 0 6rem;
   flex-direction: column;
   align-items: center;
 }
@@ -222,9 +227,12 @@
   .event-card {
     width: 100%;
   }
-  @media only screen and (max-width:480px){
-    .events-banner{
-      margin-top: -32%!important;
+  @media only screen and (max-width: 480px) {
+    .events-banner {
+      margin-top: -32% !important;
     }
   }
+}
+.lalezar {
+  font-family: lalezar !important;
 }
