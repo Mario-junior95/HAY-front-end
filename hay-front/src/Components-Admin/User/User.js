@@ -38,7 +38,7 @@ const User = () => {
               <div className="actionTitle col0 col3">Action</div>
             </div>
           </div>
-          {currentUsers.reverse().map((user) => {
+          {currentUsers.map((user) => {
             return (
               <div className="row0 rowData" key={user.id}>
                 <div className="col0 col3 grow-1">{user.name}</div>

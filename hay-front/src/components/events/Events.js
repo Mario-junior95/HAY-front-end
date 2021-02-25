@@ -40,9 +40,12 @@ const Events = () => {
     setTestimonial({
       title: testimonial.title_en,
       description: testimonial.description_en,
+      title_ar: testimonial.title_ar,
+      description_ar: testimonial.description_ar,
       image: testimonial.image,
       date: testimonial.date,
       type: testimonial.type_en,
+      type_ar: testimonial.type_ar,
     });
   };
   const passData = (webinar) => {
@@ -50,6 +53,8 @@ const Events = () => {
       id: webinar.id,
       title: webinar.title_en,
       description: webinar.description_en,
+      title_ar: webinar.title_ar,
+      description_ar: webinar.description_ar,
       image: webinar.image,
       date: webinar.date,
       time: webinar.time,
@@ -141,7 +146,7 @@ const Events = () => {
             </div>
           </div>
           <div className="event-type">
-            {data.reverse().map((webinar) => {
+            {data.map((webinar) => {
               let descWebinarEn =
                 JSON.stringify(webinar.description_en).slice(1, 50) + "...";
               let descWebinarAr =
@@ -162,16 +167,14 @@ const Events = () => {
                       {language ? (
                         <h3 className="event-title left">{webinar.title_en}</h3>
                       ) : (
-                        <h3 className="event-title right lalezar">
+                        <h3 className="event-title right ">
                           {webinar.title_ar}
                         </h3>
                       )}
                       {language ? (
                         <div className="event-date left">{webinar.date}</div>
                       ) : (
-                        <div className="event-date right lalezar">
-                          {webinar.date}
-                        </div>
+                        <div className="event-date right ">{webinar.date}</div>
                       )}
                       {language ? (
                         <ul className="event-list">
@@ -192,10 +195,10 @@ const Events = () => {
                         </ul>
                       ) : (
                         <ul
-                          className="event-list lalezar"
+                          className="event-list "
                           style={{ flexDirection: "row-reverse" }}
                         >
-                          <li className="first-child-right">
+                          <li className="first-child-right ">
                             التوقيت : <strong>{webinar.time}</strong>
                             <FontAwesomeIcon
                               icon={faClock}
@@ -216,7 +219,7 @@ const Events = () => {
                           <p>{descWebinarEn}</p>
                         </div>
                       ) : (
-                        <div className="event-desc right lalezar">
+                        <div className="event-desc right ">
                           <p>{descWebinarAr}</p>
                         </div>
                       )}
@@ -240,7 +243,7 @@ const Events = () => {
                           </button>
                         </div>
                       ) : (
-                        <div className="event-front-button right lalezar">
+                        <div className="event-front-button right ">
                           <button
                             onClick={() => {
                               passData(webinar);
@@ -275,7 +278,7 @@ const Events = () => {
         </div>
         <div className="event">
           <div className="event-type event-testimonial">
-            {testimonialData.reverse().map((testimonial) => {
+            {testimonialData.map((testimonial) => {
               let descTestimonialEn =
                 JSON.stringify(testimonial.description_en).slice(1, 100) +
                 "...";
@@ -307,7 +310,7 @@ const Events = () => {
                       </div>
                     ) : (
                       <div className="testimonial-info">
-                        <h2>{testimonial.title_ar}</h2>
+                        <h2> {testimonial.title_ar}</h2>
                         <p>{testimonial.type_ar}</p>
                       </div>
                     )}
@@ -343,7 +346,7 @@ const Events = () => {
                             style={{ marginTop: "-15px" }}
                           />
                           <div className="right">
-                            {descTestimonialAr}
+                            <em>{descTestimonialAr}</em>
                             <span>
                               <FontAwesomeIcon
                                 icon={faQuoteLeft}
@@ -375,7 +378,7 @@ const Events = () => {
                         </button>
                       </div>
                     ) : (
-                      <div className="testimonial-button right lalezar">
+                      <div className="testimonial-button right ">
                         <button
                           onClick={() => {
                             passTestimonialData(testimonial);
@@ -400,8 +403,8 @@ const Events = () => {
             })}
           </div>
         </div>
-        <ModalWebinar webinar={webinar} display={"block"} />
-        <ModalTestimonial testimonial={testimonial} />
+        <ModalWebinar webinar={webinar} language={language} />
+        <ModalTestimonial testimonial={testimonial} language={language} />
       </div>
       <Footer />
     </div>

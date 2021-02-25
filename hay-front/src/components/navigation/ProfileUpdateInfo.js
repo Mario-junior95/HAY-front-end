@@ -40,8 +40,7 @@ const ProfileUpdateInfo = (props) => {
                 }
             })
                 .then((response) => {
-                    console.log(response.data);
-                    localStorage.setItem('image', newImage);
+                    localStorage.setItem('image', response.data.user.image);
                     localStorage.setItem('name', newName);
                     localStorage.setItem('interests', newInterests);
                     localStorage.setItem('occupation', newOccupation);
@@ -72,22 +71,22 @@ const ProfileUpdateInfo = (props) => {
                         <div className="modal-body">
                             <form>
                                 <div style={{color:"red"}}>{nameErr}</div>
-                                <input value={newName ? newName : ""} type="text" placeholder="Edit your name" onChange={(e) => {
+                                <input value={newName} type="text" placeholder="Edit your name" onChange={(e) => {
                                     setNewName(e.target.value)
-                                }} /> <input type="file" onChange={(e) => {
-                                    setNewImage(e.target.files[0])
+                                }} /> <input type="file" name="image"onChange={(e) => {
+                                    setNewImage(e.target.files[0]);
                                 }} /><br></br>
                                 <br></br>
                                 <div style={{color:"red"}}>{EducationErr}</div>
-                                <textarea style={{ width: "85%" }} value={newEducation ? newEducation : ""} placeholder="Edit your Education" onChange={(e) => {
+                                <textarea style={{ width: "85%" }} value={newEducation} placeholder="Edit your Education" onChange={(e) => {
                                     setNewEducation(e.target.value)
                                 }} ></textarea><br></br>
                                 <div style={{color:"red"}}>{OccupationErr}</div>
-                                <textarea style={{ width: "85%" }} value={newOccupation ? newOccupation : ""} placeholder="Edit your Occupation" onChange={(e) => {
+                                <textarea style={{ width: "85%" }} value={newOccupation} placeholder="Edit your Occupation" onChange={(e) => {
                                     setNewOccupation(e.target.value)
                                 }} ></textarea><br></br>
                                 <div style={{color:"red"}}>{InterestsErr}</div>
-                                <textarea style={{ width: "85%" }} value={newInterests ? newInterests : ""} placeholder="Edit your Interests" onChange={(e) => {
+                                <textarea style={{ width: "85%" }} value={newInterests} placeholder="Edit your Interests" onChange={(e) => {
                                     setNewInterests(e.target.value)
                                 }} ></textarea><br></br>
 
