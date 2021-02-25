@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuoteRight, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "../../images/avatar.png";
 
 const ModalTestimonial = (props) => {
@@ -24,24 +26,71 @@ const ModalTestimonial = (props) => {
                 />
               )}
             </div>
-            <h2>{props.testimonial.title}</h2>
-            <div>
-              <p>{props.testimonial.date}</p>
+            {props.language ? (
+              <div className="testimonial-info">
+                <h2>{props.testimonial.title}</h2>
+                <p style={{ margin: "0px" }}>{props.testimonial.type}</p>
+                <p>{props.testimonial.date}</p>
+              </div>
+            ) : (
+              <div className="testimonial-info">
+                <h2> {props.testimonial.title_ar}</h2>
+                <p style={{ margin: "0px" }}>{props.testimonial.type_ar}</p>
+                <p>{props.testimonial.date}</p>
+              </div>
+            )}
+            {props.language ? (
+              <div className="testimonial-description">
+                <p>
+                  <em>
+                    <FontAwesomeIcon
+                      icon={faQuoteLeft}
+                      className="quote-icon quote-icon-left"
+                    />
+                    {props.testimonial.description}
+                    <FontAwesomeIcon
+                      icon={faQuoteRight}
+                      className="quote-icon quote-icon-right"
+                    />
+                  </em>
+                </p>
+              </div>
+            ) : (
+              <div className="testimonial-description right">
+                <p
+                  className="right"
+                  style={{
+                    display: "flex",
+                    flexDirection: "row-reverse",
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faQuoteRight}
+                    className="quote-icon"
+                    style={{ marginTop: "-15px" }}
+                  />
+                  <div className="right">
+                    <em> {props.testimonial.description_ar}</em>
+                    <span>
+                      <FontAwesomeIcon
+                        icon={faQuoteLeft}
+                        className="quote-icon"
+                        style={{ marginBottom: "-20px" }}
+                      />
+                    </span>
+                  </div>
+                </p>
+              </div>
+            )}
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="event-close-button"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
             </div>
-            <div>
-              <p>{props.testimonial.type}</p>
-            </div>
-
-            <p>{props.testimonial.description}</p>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-default"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
           </div>
         </div>
       </div>

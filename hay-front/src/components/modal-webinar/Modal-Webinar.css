@@ -1,0 +1,20 @@
+.event-close-button {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  background-color: #ddd;
+}
+.event-close-button:focus {
+  outline: none;
+}
+@media only screen and (max-width: 990px) {
+  .modal-event-icon {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 509px) {
+  .modal-event-list li {
+    margin-top: 0.8rem;
+  }
+}
