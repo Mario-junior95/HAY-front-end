@@ -5,8 +5,8 @@ import "./Home.css";
 import Axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Mission from "../../images/missions.jpeg";
-import Vision from "../../images/visions.jpeg";
+import Mission from "../../images/missions.jpg";
+import Vision from "../../images/visions.jpg";
 import Footer from "../Footer/Footer";
 
 AOS.init();
@@ -16,11 +16,12 @@ const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:8000/api/home" , {
+    Axios.get("http://localhost:8000/api/home", {
       headers: {
         "content-type": "multipart/form-data",
         Authorization: "Bearer " + localStorage.getItem("token"),
-      }}).then((response) => {
+      },
+    }).then((response) => {
       setData(response.data.home);
       AOS.init({
         duration: 3000,
@@ -32,9 +33,12 @@ const Home = () => {
     <div>
       <Navigation />
       <div className="homeimage">
-      <span style={{ color: "white" , position:"relative" , top:"35%" }}>Ar</span>{" "}
-        <label style={{ position:"relative" , top:"35%"}} className="switch">
-          <input style={{  position:"relative" , top:"35%"}}
+        <span style={{ color: "white", position: "relative", top: "35%" }}>
+          Ar
+        </span>{" "}
+        <label style={{ position: "relative", top: "35%" }} className="switch">
+          <input
+            style={{ position: "relative", top: "35%" }}
             type="checkbox"
             onChange={(e) => {
               setImageLanguage(e.target.checked);
@@ -42,11 +46,18 @@ const Home = () => {
           />
           <span className="slider round"></span>
         </label>
-        <span style={{ color: "white" , position:"relative" , top:"35%" }}>En</span>
-       { imageLanguage === true ?  <h1 style={{ paddingTop: "17%", fontSize:"25px" }} className="title">Here is the safe space you’ve been looking for! </h1> : <h1 style={{ paddingTop: "17%" , fontSize:"25px"}} className="title">هذا هو المكان الآمن الذي كنت تبحث عنه!</h1>  }
-        
-        
-        
+        <span style={{ color: "white", position: "relative", top: "35%" }}>
+          En
+        </span>
+        {imageLanguage === true ? (
+          <h1 style={{ paddingTop: "17%", fontSize: "25px" }} className="title">
+            Here is the safe space you’ve been looking for!{" "}
+          </h1>
+        ) : (
+          <h1 style={{ paddingTop: "17%", fontSize: "25px" }} className="title">
+            هذا هو المكان الآمن الذي كنت تبحث عنه!
+          </h1>
+        )}
         <div
           style={{
             width: "30%",
@@ -163,21 +174,80 @@ const Home = () => {
         })}
       </div>
 
-    
-<div className="flex-wrapper" style={{display:"flex",height:"120vh" , justifyContent:"space-around"}}>
-      <div data-aos="fade-right" className="flex-inner" style={{width:"40%"}}>
-    <img  style={{marginTop:"10%",width:"40vw",height:"52.3vh"}} id="our-missions" src={Mission} alt="missions" />
-    <h1 >Group Therapy</h1>
-    <p >If you're considering psychotherapy, several options are available. One of those options is group therapy. Depending on the nature of your problem, group therapy can be an ideal choice for addressing your concerns and making positive changes in your life.</p>
-    <Link className="booknow" id="signin" style={{ padding:"3%" , borderRadius:"15px" , width:"130px" , height:"50px"}} to="/Book">Book Now</Link>
-    </div>
-    <div data-aos="fade-left" className="flex-inner" style={{width:"40%"}}>
-    <img style={{marginTop:"10%",width:"40vw" , height:"52.3vh"}} id="our-visions" src={Vision} alt="visions" />
-    <h1 >Support Group</h1>
-    <p >Participating in a group provides you with an opportunity to be with people who are likely to have a common purpose and likely to understand one another. Benefits of participating in a support group may include: Feeling less lonely, isolated or judged. Reducing distress, depression, anxiety or fatigue. </p>
-    <Link className="booknow" id="signin" style={{ padding:"3%" , borderRadius:"15px" , width:"130px" , height:"50px"}} to="/Book">Book Now</Link>
-    </div>
-</div>
+      <div
+        className="flex-wrapper"
+        style={{
+          display: "flex",
+          height: "120vh",
+          justifyContent: "space-around",
+        }}
+      >
+        <div
+          data-aos="fade-right"
+          className="flex-inner"
+          style={{ width: "40%" }}
+        >
+          <img
+            style={{ marginTop: "10%", width: "40vw", height: "52.3vh" }}
+            id="our-missions"
+            src={Mission}
+            alt="missions"
+          />
+          <h1>Group Therapy</h1>
+          <p>
+            If you're considering psychotherapy, several options are available.
+            One of those options is group therapy. Depending on the nature of
+            your problem, group therapy can be an ideal choice for addressing
+            your concerns and making positive changes in your life.
+          </p>
+          <Link
+            className="booknow"
+            id="signin"
+            style={{
+              padding: "3%",
+              borderRadius: "15px",
+              width: "130px",
+              height: "50px",
+            }}
+            to="/Book"
+          >
+            Book Now
+          </Link>
+        </div>
+        <div
+          data-aos="fade-left"
+          className="flex-inner"
+          style={{ width: "40%" }}
+        >
+          <img
+            style={{ marginTop: "10%", width: "40vw", height: "52.3vh" }}
+            id="our-visions"
+            src={Vision}
+            alt="visions"
+          />
+          <h1>Support Group</h1>
+          <p>
+            Participating in a group provides you with an opportunity to be with
+            people who are likely to have a common purpose and likely to
+            understand one another. Benefits of participating in a support group
+            may include: Feeling less lonely, isolated or judged. Reducing
+            distress, depression, anxiety or fatigue.{" "}
+          </p>
+          <Link
+            className="booknow"
+            id="signin"
+            style={{
+              padding: "3%",
+              borderRadius: "15px",
+              width: "130px",
+              height: "50px",
+            }}
+            to="/Book"
+          >
+            Book Now
+          </Link>
+        </div>
+      </div>
 
       <Footer />
     </div>

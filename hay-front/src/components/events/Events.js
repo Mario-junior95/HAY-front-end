@@ -14,6 +14,7 @@ import {
   faQuoteLeft,
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../Footer/Footer";
 
 const Events = () => {
   const [language, setLanguage] = useState(false);
@@ -79,11 +80,10 @@ const Events = () => {
         <span
           className="label3"
           style={{
-            color: "white",
+            color: "black",
             position: "absolute",
             left: "46%",
             top: "48.7%",
-            color: "white",
           }}
         >
           Ar
@@ -104,11 +104,10 @@ const Events = () => {
         <span
           className="label5"
           style={{
-            color: "white",
+            color: "black",
             position: "absolute",
             left: "54%",
             top: "48.7%",
-            color: "white",
           }}
         >
           En
@@ -139,6 +138,13 @@ const Events = () => {
             <span className="slider round"></span>
           </label>
           <span style={{ color: "black" }}>En</span>
+          <div className="testimonial-section-title">
+            <div className="testimonial-section-title-inner">
+              <h2>UPCOMING WEBINARS</h2>
+
+              <FontAwesomeIcon icon={faSquareFull} className="square-icon" />
+            </div>
+          </div>
           <div className="event-type">
             {data.map((webinar) => {
               let descWebinarEn =
@@ -400,6 +406,7 @@ const Events = () => {
         <ModalWebinar webinar={webinar} language={language} />
         <ModalTestimonial testimonial={testimonial} language={language} />
       </div>
+      <Footer />
     </div>
   );
 };

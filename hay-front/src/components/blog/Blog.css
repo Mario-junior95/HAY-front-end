@@ -165,7 +165,6 @@ textarea {
 }
 
 .blog____image .image___blog {
-  position: relative;
   height: 300px;
   width: 100%;
 }
@@ -183,22 +182,22 @@ textarea {
 
 .title_____blog_en {
   color: black;
-  right: 21%;
+  right: 23%;
   position: relative;
 }
 .desc______blog_en {
   color: black;
-  right: 19.8%;
+  right: 18%;
   position: relative;
 }
 .time______blog_en {
   color: black;
-  right: 36%;
+  right: 38%;
   position: relative;
 }
 .title_____blog_ar {
   color: black;
-  left: 25%;
+  left: 20%;
   position: relative;
 }
 .desc______blog_ar {
@@ -314,11 +313,11 @@ textarea {
   }
   .numberofSubs {
     left: 38%;
-    font-size: 14px!important;
-    top: 50%!important;
+    font-size: 14px !important;
+    top: 50% !important;
   }
-  .Blogs-banner{
-    margin-top: -52%!important;
+  .Blogs-banner {
+    margin-top: -52% !important;
     height: 50vh;
   }
 
@@ -326,9 +325,8 @@ textarea {
     width: 100%;
   }
 
-
   .language_____switch___blog {
-    top: 490px;
+    top: 780px;
     left: 30px;
   }
   .readmore__blog {
@@ -338,11 +336,11 @@ textarea {
     width: 70%;
   }
   .title_____blog_en {
-    right: 15%;
+    right: 18%;
     position: relative;
   }
   .desc______blog_en {
-    right: 14%;
+    right: 12%;
     position: relative;
   }
   .time______blog_en {
@@ -350,7 +348,7 @@ textarea {
     position: relative;
   }
   .title_____blog_ar {
-    left: 22%;
+    left: 17%;
     position: relative;
   }
   .desc______blog_ar {
@@ -361,6 +359,16 @@ textarea {
     left: 29%;
     position: relative;
   }
+  .label1 {
+    top: 11% !important;
+  }
+  .switch1 {
+    top: 10.6% !important;
+  }
+  .label2 {
+    top: 11% !important;
+    left: 58% !important;
+  }
 }
 @media only screen and (max-width: 320px) {
   .body_____blog {
@@ -369,15 +377,15 @@ textarea {
   .input______subscribers {
     width: 250px !important;
   }
-  .Blogs-banner{
-    margin-top: -80%!important;
+  .Blogs-banner {
+    margin-top: -80% !important;
   }
-  .Blogs-banner >.title{
-      top: 35%!important;
+  .Blogs-banner > .title {
+    top: 35% !important;
   }
   .numberofSubs {
     left: 35%;
-    font-size: 12px!important;
+    font-size: 12px !important;
     top: 44% !important;
   }
 
@@ -388,7 +396,7 @@ textarea {
     width: 100%;
   }
   .language_____switch___blog {
-    top: 420px;
+    top: 730px;
     left: -3px;
     width: 70px;
   }
@@ -399,15 +407,15 @@ textarea {
     width: 90%;
   }
   .title_____blog_en {
-    right: 1%;
+    right: 12%;
     position: relative;
   }
   .desc______blog_en {
-    right: 0.5%;
+    right: 5%;
     position: relative;
   }
   .time______blog_en {
-    right: 30%;
+    right: 32%;
     position: relative;
   }
   .title_____blog_ar {
@@ -415,12 +423,21 @@ textarea {
     position: relative;
   }
   .desc______blog_ar {
-    left: 7%;
+    left: 16%;
     position: relative;
   }
   .time______blog_ar {
     left: 29%;
     position: relative;
   }
-
+  .label1 {
+    top: 11% !important;
+  }
+  .switch1 {
+    top: 10.6% !important;
+  }
+  .label2 {
+    top: 11% !important;
+    left: 62% !important;
+  }
 }
