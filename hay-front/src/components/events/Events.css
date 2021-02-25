@@ -222,9 +222,12 @@
   .event-card {
     width: 100%;
   }
-  @media only screen and (max-width:480px){
-    .events-banner{
-      margin-top: -32%!important;
-    }
+}
+@media only screen and (max-width: 480px) {
+  .events-banner {
+    margin-top: -32% !important;
+  }
+  .event-card {
+    padding-top: 40px;
   }
 }
